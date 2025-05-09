@@ -5,15 +5,151 @@
     padding:0;
     box-sizing: border-box;
 }
-
+:root{
+    --blueDegrade: #3498db;
+    --whiteDegrade: #faf2ce;
+    --blueDark-1: #17385d;
+    --blueDark-2: #071328;
+    --blueAsh-1: #95b1c9;
+    --blueAsh-2: #80a2b7;
+}
 body{
-    /* font-family: sans-serif; */
+    font-family: "Cal Sans", sans-serif;
     
     max-width: 100% !important;
     overflow-x: hidden !important;
     scroll-behavior: smooth;          
 }
-
+.cal-sans-regular {
+    font-family: "Cal Sans", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+  
 section{
     padding:40px 0;
 }
+/*---------------------------- Construction Page ----------------------------*/
+
+.construction-page{
+    height:100vh;
+    background: #FAF2CE;
+    background: linear-gradient(180deg, rgba(250, 242, 206, 1) 1%, rgba(52, 152, 219, 1) 100%);
+}
+
+.construction-page .container{
+    height:100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.img-logo{
+    display:flex;
+    justify-content: center;
+}
+.img-logo img{
+    width: 100px;
+    opacity: 0;
+    transition: all .2s ease-in-out;
+}
+
+.title-page{
+    text-align: center;
+    color:var(--blueAsh-2);
+    font-size:2.3rem;
+    opacity: 0;
+    transition: all .3s ease-in-out;
+
+}
+
+.container-img-pet{
+    display:flex;
+    justify-content: center;
+}
+.img-pet{
+    width:300px;
+    
+}
+.img-pet img{
+    width:100%;
+    /* animation: float 6s ease-in-out infinite; */
+    position: relative;
+    animation: dropDown 3.5s forwards;
+}
+
+
+/* Animación de caída inicial */
+@keyframes dropDown {
+    0% {
+        top: -500px;
+    }
+    100%{
+        top:0;
+    }
+}
+
+/* Animación de flotación */
+@keyframes float {
+    0% {
+      transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+      transform: translateY(-20px) rotate(1deg);
+    }
+    100% {
+      transform: translateY(0px) rotate(0deg);
+    }
+}
+/* ------------------------- Footer ------------------ */
+
+.text-footer{
+    text-align: center;
+    color:#fff;
+    font-size:1.3rem;
+    transition: all .4s ease-in-out;
+    opacity: 0;
+}
+
+
+
+
+/* ----------------------------------------- Responsive ----------------------------------------- */
+
+/* Tablets (pantallas con un ancho máximo de 1024px) */
+@media screen and (max-width: 1024px) {
+    /* Estilos específicos para tablets */
+    
+    /* .construction-page{
+        height:auto;
+    } */
+    .img-pet{
+        width:250px;
+        
+    }
+
+    .title-page{
+        font-size:2rem;
+        
+    
+    }
+
+  }
+  
+  /* Celulares (pantallas con un ancho máximo de 767px) */
+  @media screen and (max-width: 520px) {
+    /* Estilos específicos para celulares */
+    .title-page{
+        font-size:1.5rem;
+    }
+
+    .img-pet{
+        width:200px;
+        
+    }
+
+    .text-footer{
+        font-size:1rem;
+    }
+    
+  }
