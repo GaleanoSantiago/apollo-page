@@ -10,8 +10,11 @@
   --whiteDegrade: #faf2ce;
   --blueDark-1: #17385d;
   --blueDark-2: #071328;
+  --blueLight: #d0e3ea;
   --blueAsh-1: #95b1c9;
   --blueAsh-2: #80a2b7;
+  --orangeLight: #e88370; 
+  --orangeDark: #db6758;
 }
 body {
   font-family: "Cal Sans", sans-serif;
@@ -34,7 +37,7 @@ section {
 .construction-page {
   height: 100vh;
   background: #faf2ce;
-  background: linear-gradient(180deg, rgba(250, 242, 206, 1) 1%, #608191 100%);
+  background: linear-gradient(180deg, rgba(250, 242, 206, 1) 5%, #608191 87%);
 }
 
 .construction-page .container {
