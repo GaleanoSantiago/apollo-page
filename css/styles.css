@@ -139,6 +139,12 @@ section{
   /* Celulares (pantallas con un ancho máximo de 767px) */
   @media screen and (max-width: 520px) {
     /* Estilos específicos para celulares */
+    .construction-page{
+        height:auto;
+        min-height: 100vh;
+    }
+    
+    
     .title-page{
         font-size:1.5rem;
     }
