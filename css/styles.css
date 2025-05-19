@@ -10,8 +10,16 @@
   --whiteDegrade: #faf2ce;
   --blueDark-1: #17385d;
   --blueDark-2: #071328;
+<<<<<<< HEAD
   --blueAsh-1: #95b1c9;
   --blueAsh-2: #80a2b7;
+=======
+  --blueLight: #d0e3ea;
+  --blueAsh-1: #95b1c9;
+  --blueAsh-2: #80a2b7;
+  --orangeLight: #e88370; 
+  --orangeDark: #db6758;
+>>>>>>> galeano
 }
 body {
   font-family: "Cal Sans", sans-serif;
@@ -19,6 +27,19 @@ body {
   max-width: 100% !important;
   overflow-x: hidden !important;
   scroll-behavior: smooth;
+<<<<<<< HEAD
+=======
+  height:100vh;
+  background: hsla(212, 60%, 23%, 1);
+
+  background: linear-gradient(45deg, hsla(212, 60%, 23%, 1) 0%, hsla(204, 70%, 53%, 1) 40%, hsla(186, 85%, 75%, 1) 76%);
+
+  background: -moz-linear-gradient(45deg, hsla(212, 60%, 23%, 1) 0%, hsla(204, 70%, 53%, 1) 40%, hsla(186, 85%, 75%, 1) 76%);
+
+  background: -webkit-linear-gradient(45deg, hsla(212, 60%, 23%, 1) 0%, hsla(204, 70%, 53%, 1) 40%, hsla(186, 85%, 75%, 1) 76%);
+
+  filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#17385D", endColorstr="#3498DB", GradientType=1 );
+>>>>>>> galeano
 }
 .cal-sans-regular {
   font-family: "Cal Sans", sans-serif;
@@ -29,12 +50,23 @@ body {
 section {
   padding: 40px 0;
 }
+
+.container-flex{
+  display:flex;
+  flex-wrap: wrap;
+}
+
 /*---------------------------- Construction Page ----------------------------*/
 
 .construction-page {
   height: 100vh;
   background: #faf2ce;
+<<<<<<< HEAD
   background: linear-gradient(180deg, rgba(250, 242, 206, 1) 1%, #608191 100%);
+=======
+  background: linear-gradient(180deg, rgba(250, 242, 206, 1) 5%, #608191 87%);
+  display: none;
+>>>>>>> galeano
 }
 
 .construction-page .container {
@@ -108,6 +140,79 @@ section {
   opacity: 0;
 }
 
+<<<<<<< HEAD
+=======
+/* ---------------------- Navbar ------------------------ */
+
+.navbar-brand{
+  width:40px;
+}
+
+.navbar-brand img{
+  width:100%;
+}
+.navbar-nav{
+  width:100%;
+  display:flex;
+  justify-content: end;
+  gap:30px;
+}
+
+.nav-link{
+  color:var(--blueDark-1);
+  font-size:1.2rem;
+}
+.nav-link.active{
+  text-decoration: underline;
+}
+.nav-link.btn-nav{
+  background-color: var(--blueDark-1) !important;
+  color:#fafafa;
+  border-radius:7px;
+}
+
+.left-div{
+  width:45%;
+} 
+
+.right-div{
+  width:55%;
+}
+
+.btn-main{
+  background:var(--orangeLight);
+  color:var(--blueDark-1);
+  font-size:1.25rem;
+}
+.presentacion {
+  padding:0 20px;
+  color:#fafafa;
+}
+.presentacion h2{
+  font-size:6rem;
+  text-align:center;
+}
+
+.presentacion p{
+  font-size:1.2rem;
+}
+.presentacion .presupuesto-text{
+  font-weight:bold;
+  font-size: 1.3rem;
+}
+
+.container-img-inicio{
+  width:100%;
+}
+.container-img-inicio img{
+  width:100%;
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.15));
+}
+
+.presentacion-img{
+  padding: 0 60px;
+}
+>>>>>>> galeano
 /* ----------------------------------------- Responsive ----------------------------------------- */
 
 /* Tablets (pantallas con un ancho máximo de 1024px) */
@@ -120,6 +225,19 @@ section {
   .img-pet {
     width: 250px;
   }
+<<<<<<< HEAD
+=======
+  
+}
+  /* Celulares (pantallas con un ancho máximo de 767px) */
+  @media screen and (max-width: 520px) {
+    /* Estilos específicos para celulares */
+    .construction-page{
+        height:auto;
+        min-height: 100vh;
+    }
+    
+>>>>>>> galeano
 
   .title-page {
     font-size: 2rem;
