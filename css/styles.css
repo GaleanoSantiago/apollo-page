@@ -10,16 +10,13 @@
   --whiteDegrade: #faf2ce;
   --blueDark-1: #17385d;
   --blueDark-2: #071328;
-<<<<<<< HEAD
-  --blueAsh-1: #95b1c9;
-  --blueAsh-2: #80a2b7;
-=======
+
   --blueLight: #d0e3ea;
   --blueAsh-1: #95b1c9;
   --blueAsh-2: #80a2b7;
   --orangeLight: #e88370; 
   --orangeDark: #db6758;
->>>>>>> galeano
+
 }
 body {
   font-family: "Cal Sans", sans-serif;
@@ -27,8 +24,6 @@ body {
   max-width: 100% !important;
   overflow-x: hidden !important;
   scroll-behavior: smooth;
-<<<<<<< HEAD
-=======
   height:100vh;
   background: hsla(212, 60%, 23%, 1);
 
@@ -39,7 +34,6 @@ body {
   background: -webkit-linear-gradient(45deg, hsla(212, 60%, 23%, 1) 0%, hsla(204, 70%, 53%, 1) 40%, hsla(186, 85%, 75%, 1) 76%);
 
   filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#17385D", endColorstr="#3498DB", GradientType=1 );
->>>>>>> galeano
 }
 .cal-sans-regular {
   font-family: "Cal Sans", sans-serif;
@@ -61,12 +55,9 @@ section {
 .construction-page {
   height: 100vh;
   background: #faf2ce;
-<<<<<<< HEAD
-  background: linear-gradient(180deg, rgba(250, 242, 206, 1) 1%, #608191 100%);
-=======
+
   background: linear-gradient(180deg, rgba(250, 242, 206, 1) 5%, #608191 87%);
   display: none;
->>>>>>> galeano
 }
 
 .construction-page .container {
@@ -140,8 +131,6 @@ section {
   opacity: 0;
 }
 
-<<<<<<< HEAD
-=======
 /* ---------------------- Navbar ------------------------ */
 
 .navbar-brand{
@@ -212,7 +201,6 @@ section {
 .presentacion-img{
   padding: 0 60px;
 }
->>>>>>> galeano
 /* ----------------------------------------- Responsive ----------------------------------------- */
 
 /* Tablets (pantallas con un ancho máximo de 1024px) */
@@ -225,8 +213,7 @@ section {
   .img-pet {
     width: 250px;
   }
-<<<<<<< HEAD
-=======
+
   
 }
   /* Celulares (pantallas con un ancho máximo de 767px) */
@@ -237,7 +224,6 @@ section {
         min-height: 100vh;
     }
     
->>>>>>> galeano
 
   .title-page {
     font-size: 2rem;
