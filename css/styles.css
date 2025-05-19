@@ -124,7 +124,7 @@ section {
     width: 250px;
   }
   
-  
+}
   /* Celulares (pantallas con un ancho máximo de 767px) */
   @media screen and (max-width: 520px) {
     /* Estilos específicos para celulares */
