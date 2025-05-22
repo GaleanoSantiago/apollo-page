@@ -55,7 +55,7 @@ section {
   height: 100vh;
   /* background: #faf2ce; */
   /* background: linear-gradient(180deg, rgba(250, 242, 206, 1) 5%, #608191 87%); */
-  /* display: none; */
+  display: none;
 }
 
 .construction-page .container {
@@ -173,14 +173,19 @@ section {
   border-radius:7px;
 }
 /* Nav en construcion page */
-nav.navbar{
+/* nav.navbar{
   display: none;
-}
+} */
 
 /* Nav en construcion page */
 /* ---------------------- Inicio ------------------------ */
-#inicio{
+/* #inicio{
   display: none;
+} */
+.container-wrap-inicio{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 .left-div{
   width:45%;
@@ -250,6 +255,12 @@ nav.navbar{
   .title-page {
     font-size: 2rem;
   }
+
+  /* ============== Inicio ============== */
+  .left-div, .right-div{
+    width:100%;
+  } 
+  
 }
 
 /* Celulares (pantallas con un ancho máximo de 767px) */
