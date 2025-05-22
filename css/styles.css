@@ -23,6 +23,7 @@ body {
   overflow-x: hidden !important;
   scroll-behavior: smooth;
   height:100vh;
+  /* Para cuando la construction page este desactivada */
   background: hsla(212, 60%, 23%, 1);
 
   background: linear-gradient(45deg, hsla(212, 60%, 23%, 1) 0%, hsla(204, 70%, 53%, 1) 40%, hsla(186, 85%, 75%, 1) 76%);
@@ -52,9 +53,9 @@ section {
 
 .construction-page {
   height: 100vh;
-  background: #faf2ce;
-  background: linear-gradient(180deg, rgba(250, 242, 206, 1) 5%, #608191 87%);
-  display: none;
+  /* background: #faf2ce; */
+  /* background: linear-gradient(180deg, rgba(250, 242, 206, 1) 5%, #608191 87%); */
+  /* display: none; */
 }
 
 .construction-page .container {
@@ -69,14 +70,14 @@ section {
   justify-content: center;
 }
 .img-logo img {
-  width: 100px;
+  width: 50px;
   opacity: 0;
   transition: all 0.2s ease-in-out;
 }
 
 .title-page {
   text-align: center;
-  color: var(--blueAsh-2);
+  color: var(--whiteDegrade);
   font-size: 2.3rem;
   opacity: 0;
   transition: all 0.3s ease-in-out;
@@ -85,6 +86,15 @@ section {
   opacity: 1;
   font-size:2rem;
 }
+.n_contacto_div{
+  display: flex;
+  justify-content: center;
+}
+.n_contacto_div .btn-main{
+  background: var(--whiteDegrade);
+  color:var(--blueAsh-2);
+  border:none;
+} 
 .container-img-pet {
   display: flex;
   justify-content: center;
@@ -125,7 +135,7 @@ section {
 
 .text-footer {
   text-align: center;
-  color: #fff;
+  color: var(--whiteDegrade);
   font-size: 1.3rem;
   transition: all 0.4s ease-in-out;
   opacity: 0;
@@ -159,7 +169,16 @@ section {
   color:#fafafa;
   border-radius:7px;
 }
+/* Nav en construcion page */
+nav.navbar{
+  display: none;
+}
 
+/* Nav en construcion page */
+/* ---------------------- Inicio ------------------------ */
+#inicio{
+  display: none;
+}
 .left-div{
   width:45%;
 } 
