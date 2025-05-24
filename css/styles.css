@@ -227,7 +227,8 @@ section {
 .container-img-inicio{
   width:350px;
   position: relative;
-
+  animation: dropDownMain 1.5s ease-in-out;
+  animation-delay: 0s;
 }
 .container-img-inicio img{
   width:100%;
@@ -309,7 +310,7 @@ section {
 .phone-box.box-2.in-place,
 .phone-box.box-3.in-place{
   top:150px;
-  left:50px;
+  left:60px;
   transition: all .4s ease-in-out;
   animation:none;
   box-shadow: none;
@@ -339,6 +340,21 @@ section {
 
 /* Animaciones */
 
+/* Animación de caída inicial */
+@keyframes dropDownMain {
+  0% {
+    top: -300px;
+    opacity: 0;
+  }
+  60%{
+    opacity: 0;
+  }
+  100% {
+    top: 0;
+    opacity: 1;
+
+  }
+}
 
 @keyframes floatOrbit1 {
   0%   { transform: translate(0, 0) scale(1); }

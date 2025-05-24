@@ -20,7 +20,7 @@ astronaut.addEventListener("animationend", (e) => {
 
 // Animacion del phone-inicio img
 const boxes = document.querySelectorAll(".phone-box");
-const presentacionImg = document.querySelector(".presentacion-img");
+const presentacionImg = document.querySelector(".container-img-inicio");
 const divInicio = document.getElementById("inicio");
 
 function animateBoxes(boxes, add = true, i = 0) {
@@ -37,20 +37,30 @@ function animateBoxes(boxes, add = true, i = 0) {
 
 let animating = false;
 
-divInicio.addEventListener("mouseenter", () => {
-  if (animating) return;
-  animating = true;
-  animateBoxes(boxes, false); // Quita la clase
-  setTimeout(() => animating = false, boxes.length * 100);
+// Esperar a que la animacion de dropDown termine antes de desglozar las cartas
+presentacionImg.addEventListener("animationend", (e) => {
+  
+  if (e.animationName === "dropDownMain") {
+    // Inicializar con animación completa
+    animateBoxes(boxes, false);
+
+    
+  divInicio.addEventListener("mouseenter", () => {
+    if (animating) return;
+    animating = true;
+    animateBoxes(boxes, false); // Quita la clase
+    setTimeout(() => animating = false, boxes.length * 100);
+  });
+
+  divInicio.addEventListener("mouseleave", () => {
+    if (animating) return;
+    animating = true;
+    animateBoxes(boxes, true); // Agrega la clase
+    setTimeout(() => animating = false, boxes.length * 100);
+  });
+
+  }
 });
 
-divInicio.addEventListener("mouseleave", () => {
-  if (animating) return;
-  animating = true;
-  animateBoxes(boxes, true); // Agrega la clase
-  setTimeout(() => animating = false, boxes.length * 100);
-});
 
-// Inicializar con animación completa
-animateBoxes(boxes, false);
 
