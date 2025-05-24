@@ -258,7 +258,7 @@ section {
   left:-100px;
   top:60px;
   z-index:1;
-  animation: floatOrbit1 6s linear infinite;
+  animation: floatOrbit1 5s linear infinite;
 }
 .phone-box.box-2{
   left:30px;
@@ -322,7 +322,7 @@ section {
 
 @keyframes floatUpDown {
   0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-12px); }
+  50% { transform: translateY(-5px); }
 }
 
 @keyframes floatDiagonal {
