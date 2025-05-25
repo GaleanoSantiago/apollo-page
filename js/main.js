@@ -45,19 +45,19 @@ presentacionImg.addEventListener("animationend", (e) => {
     animateBoxes(boxes, false);
 
     
-  divInicio.addEventListener("mouseenter", () => {
-    if (animating) return;
-    animating = true;
-    animateBoxes(boxes, false); // Quita la clase
-    setTimeout(() => animating = false, boxes.length * 100);
-  });
+    divInicio.addEventListener("mouseenter", () => {
+      if (animating) return;
+      animating = true;
+      animateBoxes(boxes, false); // Quita la clase
+      setTimeout(() => animating = false, boxes.length * 100);
+    });
 
-  divInicio.addEventListener("mouseleave", () => {
-    if (animating) return;
-    animating = true;
-    animateBoxes(boxes, true); // Agrega la clase
-    setTimeout(() => animating = false, boxes.length * 100);
-  });
+    divInicio.addEventListener("mouseleave", () => {
+      if (animating) return;
+      animating = true;
+      animateBoxes(boxes, true); // Agrega la clase
+      setTimeout(() => animating = false, boxes.length * 100);
+    });
 
   }
 });
