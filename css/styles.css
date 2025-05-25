@@ -231,6 +231,8 @@ section {
 .presentacion .presupuesto-text{
   font-weight:bold;
   font-size: 1.3rem;
+  letter-spacing: 0.14em;
+
 }
 
 .presentacion-img{
