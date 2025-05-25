@@ -16,7 +16,7 @@
   --blueAsh-2: #80a2b7;
   --orangeLight: #e88370; 
   --orangeDark: #db6758;
-
+  --font: #fafafa;
 }
 body {
   font-family: "Cal Sans", sans-serif;
@@ -24,7 +24,7 @@ body {
   max-width: 100% !important;
   overflow-x: hidden !important;
   scroll-behavior: smooth;
-  height:100vh;
+  /* height:100vh; */
   /* Fondo gradient */
   background: hsla(212, 60%, 23%, 1);
 
@@ -43,7 +43,7 @@ body {
 }
 
 section {
-  padding: 40px 0;
+  padding: 50px 0;
 }
 
 .container-flex{
@@ -51,6 +51,17 @@ section {
   flex-wrap: wrap;
 }
 
+.title, .subtitle{
+  color: var(--font);
+  text-align:center;
+}
+.title{
+  letter-spacing: 0.1em;
+}
+.subtitle{
+  font-weight: lighter !important;
+  letter-spacing: 0.4em;
+}
 /*---------------------------- Construction Page ----------------------------*/
 
 .construction-page {
@@ -168,6 +179,8 @@ section {
 }
 .nav-link.active{
   text-decoration: underline;
+  color:var(--blueDark-1) !important;
+
 }
 .nav-link.btn-nav{
   background-color: var(--blueDark-1) !important;
@@ -188,6 +201,7 @@ section {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  /* padding:50px 0; */
 }
 .left-div{
   width:45%;
@@ -391,6 +405,56 @@ section {
   50% { transform: translate(10px, 10px); }
 }
 
+/* ---------------------- Servicios ------------------------ */
+
+.contenedor-blur-cards{
+  display: flex;
+  justify-content: space-around;
+  flex-wrap:wrap;
+  gap:15px;
+  padding: 20px 0;
+} 
+.blur-card{
+  width:550px;
+  border:1px solid #fafafa;
+  color:var(--font);
+  padding:30px 40px;
+
+  /* Efecto blur */
+  /* From https://css.glass */
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+.blur-card .subtitle{
+  letter-spacing: 0.1em;
+  font-size:1.3rem;
+}
+.blur-card .title{
+  font-size:2.1rem;
+}
+.b-card-body{
+  text-align: justify;
+  font-size:1rem;
+}
+.b-card-img{
+  overflow: hidden;
+  height: 300px;
+  border-radius: 20px;
+  /* border:1px solid #fafafa; */
+}
+.b-card-img img{
+  width: 100%;
+}
+
+.b-card-btns{
+  display: flex;
+  justify-content: center;
+  padding-top:30px;
+}
 /* ----------------------------------------- Responsive ----------------------------------------- */
 
 /* Tablets (pantallas con un ancho máximo de 1024px) */
