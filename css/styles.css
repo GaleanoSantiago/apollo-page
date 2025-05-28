@@ -252,7 +252,7 @@ section {
 }
 
 .btn-main {
-  background: var(--blueLight);
+  background: var(--whiteDegrade);
   color: var(--blueDark-1);
   font-size: 1.25rem;
 }
