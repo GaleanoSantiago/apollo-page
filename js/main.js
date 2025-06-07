@@ -21,7 +21,7 @@ astronaut.addEventListener("animationend", (e) => {
 // Animacion del phone-inicio img
 const boxes = document.querySelectorAll(".phone-box");
 const presentacionImg = document.querySelector(".container-img-inicio");
-const divInicio = document.getElementById("inicio");
+const divInicio = document.getElementById("top-page");
 
 function animateBoxes(boxes, add = true, i = 0) {
   if (i >= boxes.length) return;
@@ -63,4 +63,43 @@ presentacionImg.addEventListener("animationend", (e) => {
 });
 
 
+document.addEventListener("DOMContentLoaded", () => {
+  const section = document.querySelector("section#especialidades");
+  const timelineFill = document.querySelector(".timeline-fill");
+  const boxTl = document.querySelectorAll(".box-tl");
+  const totalDuration = 4;
+  let animacionesEjecutadas = false;
 
+  // Paso 1: Asegurar que todos tengan la clase fadeup desde el inicio
+  boxTl.forEach((el) => {
+    el.classList.add("fadeup");
+  });
+
+  function activarAnimaciones() {
+    // Activar línea de tiempo
+    timelineFill.style.animation = `expandLine 7s ease forwards`;
+
+    // Activar fadeup en las cajas con delay escalonado
+    boxTl.forEach((el, index) => {
+      let groupIndex = index % 3;
+      let delay = ((groupIndex + 1) * totalDuration) / 3;
+      el.style.animation = `fadeUp 1s ease-out ${delay}s forwards`;
+
+      el.addEventListener("animationend", () => {
+        el.classList.remove("fadeup");
+        el.style.animation = ""; // Limpiar para posibles futuras repeticiones
+      });
+    });
+  }
+
+  // Scroll listener
+  window.addEventListener("scroll", () => {
+    const sectionTop = section.getBoundingClientRect().top;
+    const windowHeight = window.innerHeight;
+
+    if (!animacionesEjecutadas && sectionTop < windowHeight - 100) {
+      activarAnimaciones();
+      animacionesEjecutadas = true;
+    }
+  });
+});

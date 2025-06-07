@@ -40,8 +40,7 @@ body {
   max-width: 100% !important;
   overflow-x: hidden !important;
   scroll-behavior: smooth;
-  background-image: url("../img/background/Seccion_1.webp");
-  background-position: center;
+  
   /* height:100vh; */
   /* Fondo gradient 
   background: hsla(212, 60%, 23%, 1);
@@ -86,7 +85,9 @@ p {
 section {
   padding: 50px 0;
 }
-
+article{
+  padding:50px 0;
+}
 .container-flex {
   display: flex;
   flex-wrap: wrap;
@@ -234,9 +235,14 @@ section {
 
 /* Nav en construcion page */
 /* ---------------------- Inicio ------------------------ */
-/* #inicio{
-  display: none;
-} */
+#inicio{
+  /* display: none; */
+  background-image: url("../img/background/Seccion_1.webp");
+  background-position: center;
+  /* background-size: cover; */
+  padding-top:0;
+}
+
 .container-wrap-inicio {
   display: flex;
   justify-content: center;
@@ -255,6 +261,7 @@ section {
   background: var(--blueLight);
   color: var(--blueDark-1);
   font-size: 1.25rem;
+  padding: 0 15px;
 }
 .presentacion {
   padding: 0 20px;
@@ -528,6 +535,121 @@ section {
   justify-content: center;
   padding-top: 30px;
 }
+
+/* ----------------------------------------- Especialidades ----------------------------------------- */
+#especialidades{
+  min-height: 800px;
+  /* background-image: url("../img/background/astronaunt-min.webp"); */
+  background-image:
+  linear-gradient(rgba(151, 198, 230, 0.7), rgba(112, 154, 182, 0.5)),
+  url("../img/background/astronaunt-min.webp");
+
+  background-size: cover;
+  background-attachment: fixed;
+
+}
+
+#especialidades .title{
+  color:var(--blueDark-2);
+  /* font-size:2.4rem; */
+  font-weight: 600;
+  text-transform: uppercase;
+
+}
+.timeline-container{
+  display: flex;
+  flex-direction: column;
+  gap:15px;
+  padding: 25px 0;
+}
+.timeline-container .row{
+  justify-content: space-around;
+}
+.timeline-bar {
+  width: 100%;
+  height: 5px;
+  /* background-color: transparent; */
+  position: relative;
+  /* overflow: hidden; */
+  display:flex;
+  align-items: center;
+
+}
+
+.timeline-fill {
+  height: 100%;
+  width: 0%;
+  background-color: var(--blueDark-1);
+  /* animation: expandLine 7s ease forwards; */
+}
+/* Navecita */
+.fa-shuttle-space{
+  font-size:1.9rem;
+  color:var(--blueDark-1);
+}
+
+@keyframes expandLine {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+
+.box-tl{
+  width:350px;
+  color:var(--blueDark-2);
+  padding:15px;
+  display: flex;
+  flex-direction: column;
+  gap:10px;
+  /* border:1px solid var(--blueDark-1); */
+  border-radius: 7px;
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.2));
+  /* opacity: 0; */
+}
+.box-tl .subtitle{
+  font-size:1.4rem;
+  font-weight: bold !important;
+  color:var(--blueDark-2);
+  letter-spacing: normal !important;
+  
+}
+
+.box-tl .box-tl-body{
+  text-align: center;
+  font-weight: bold;
+}
+
+.box-tl-btns{
+  display:flex;
+  justify-content: center;
+}
+
+.box-tl .btn-main{
+  background-color: var(--blueDark-1);
+  color:var(--blueLight);
+  font-size:1rem;
+}
+
+
+
+.fadeup {
+  opacity: 0;
+  transform: translateY(20px);
+  /* animation: fadeUp 1s ease-out forwards; */
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
 /* ----------------------------------------- Responsive ----------------------------------------- */
 
 /* Tablets (pantallas con un ancho máximo de 1024px) */
