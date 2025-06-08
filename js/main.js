@@ -65,7 +65,7 @@ presentacionImg.addEventListener("animationend", (e) => {
 
 
 document.addEventListener("DOMContentLoaded", () => {
-  const section = document.querySelector("section#especialidades");
+  const section = document.querySelector("#especialidades");
   const navbar = document.querySelector("#navbar");
   const timelineFill = document.querySelector(".timeline-fill");
   const boxTl = document.querySelectorAll(".box-tl");
@@ -215,3 +215,4 @@ function animateExit(proyecto) {
     if (boxBlock.length === 0) resolve();
   });
 }
+

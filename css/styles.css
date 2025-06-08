@@ -678,12 +678,14 @@ article{
 }
 
 /* ----------------------------------------- Trabajos ----------------------------------------- */
-
-#trabajos{
-  /* min-height:800px; */
+#trabajos-section{
   background-image: url("../img/background/Seccion_2Large.webp");
   background-position: center;
+  padding-top:0;
 }
+/* #trabajos{
+  
+} */
 #trabajos .title{
   color:var(--blueDark-2);
 }
@@ -757,7 +759,41 @@ article{
   border: none;
 }
 
+/* ----------------------------------------- Responsive ----------------------------------------- */
+#contacto, #trabajos{
+  padding:60px 0;
+}
 
+.contenedor-form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap:20px;
+}
+.form{
+  width: 600px;
+  padding:40px ;
+  /* Efecto blur */
+  /* From https://css.glass */
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.form input, .form input:active, .form input:focus, .form textarea, .form textarea:focus{
+  background-color: transparent;
+  border:none;
+  border-bottom:1px solid #ccc;
+  color:var(--font);
+  box-shadow: none;
+}
+.form input::placeholder, .form textarea::placeholder {
+  color: #ccc;
+  opacity: 1;
+}
 /* ----------------------------------------- Responsive ----------------------------------------- */
 
 /* Tablets (pantallas con un ancho máximo de 1024px) */
