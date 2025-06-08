@@ -228,6 +228,24 @@ article{
   color: #fafafa;
   border-radius: 7px;
 }
+
+/*-------------- Navbar fixed ---------------- */
+
+.navbar.fixed{
+  background: var(--blueDark-2);
+  color:var(--font);
+  position: fixed;
+  width: 100%;
+  z-index:3;
+  /* transform: translateY(20px); */
+  animation: fadeDown .4s ease-out forwards;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+
+.navbar.fixed .nav-link, .navbar.fixed .nav-link.active{
+  color:var(--whiteDegrade) !important;
+}
+
 /* Nav en construcion page */
 /* nav.navbar{
   display: none;
@@ -647,6 +665,96 @@ article{
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+@keyframes fadeDown {
+  0%{
+    transform: translateY(-50px);
+  }   
+  100%{
+    /* opacity: 1; */
+    transform: translateY(0);
+  }
+}
+
+/* ----------------------------------------- Trabajos ----------------------------------------- */
+
+#trabajos{
+  /* min-height:800px; */
+  background-image: url("../img/background/Seccion_2Large.webp");
+  background-position: center;
+}
+#trabajos .title{
+  color:var(--blueDark-2);
+}
+.contenedor-proyectos{
+  padding:20px;
+  /* border:1px solid #ccc; */
+}
+
+.col-left{
+  display: flex;
+  flex-wrap: wrap;
+  gap:15px;
+}
+
+.col-left .large-block{
+  width: 100%;
+  overflow: hidden;
+  height:350px;
+  border-radius: 10px;
+}
+.col-left .container-block{
+  display: flex;
+  /* border: 1px solid #fff; */
+  width:100%;
+  gap:15px;
+}
+.col-left .small-block{
+  width: 50%;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.bigest-block{
+  overflow: hidden;
+  height: 600px;
+  border-radius: 10px;
+}
+.box-block{
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.large-block img, .small-block img, .bigest-block img{
+  width: 100%;
+}
+
+.contenedor-flechas{
+  display: flex;
+  justify-content: end;
+  color: var(--font);
+  gap:10px;
+  padding:10px 0;
+}
+.contenedor-flechas .arrow-block{
+  background: var(--font);
+  /* padding:1px 8px; */
+  width:25px;
+  border:none;
+  border-radius: 2px;
+  color:var(--blueDegrade);
+  font-weight: bold;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  transition: all .3s ease-in-out;
+
+}
+.contenedor-flechas .arrow-block.active{
+  background:var(--blueDegrade);
+  color:var(--font);
+  transition: all .3s ease-in-out;
+}
+.contenedor-flechas .arrow-block-text{
+  background-color: transparent;
+  color: var(--font);
+  border: none;
 }
 
 
