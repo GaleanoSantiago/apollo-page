@@ -212,12 +212,15 @@ article{
   width: 100%;
   display: flex;
   justify-content: end;
-  gap: 30px;
+  gap: 80px;
 }
 
 .nav-link {
   color: var(--blueDark-1);
   font-size: 1.2rem;
+  font-weight: bold;
+  letter-spacing: 0.05rem;
+
 }
 .nav-link.active {
   text-decoration: underline;
@@ -244,6 +247,8 @@ article{
 
 .navbar.fixed .nav-link, .navbar.fixed .nav-link.active{
   color:var(--whiteDegrade) !important;
+  font-weight: normal;
+  letter-spacing: 0.05rem;
 }
 
 /* Nav en construcion page */
@@ -556,7 +561,7 @@ article{
 
 /* ----------------------------------------- Especialidades ----------------------------------------- */
 #especialidades{
-  min-height: 800px;
+  /* min-height: 800px; */
   /* background-image: url("../img/background/astronaunt-min.webp"); */
   background-image:
   linear-gradient(rgba(151, 198, 230, 0.7), rgba(112, 154, 182, 0.5)),
@@ -794,6 +799,44 @@ article{
   color: #ccc;
   opacity: 1;
 }
+
+
+footer{
+  background: var(--blueDark-2);
+  /* height:300px; */
+  color:var(--font);
+  padding-top:60px;
+}
+footer a{
+  text-decoration:none;
+  color:var(--font);
+  font-weight: bold;
+}
+footer ul{
+  padding: 0;
+}
+footer ul li{
+  list-style:none;
+}
+
+footer .icons-container{
+  display: flex;
+  gap:10px;
+  justify-content: center;
+}
+
+.icons-container .icon-red{
+  width:40px;
+  height:40px;
+  background-color: var(--whiteDegrade);
+  border-radius:5px;
+}
+footer .ul-nav{
+  text-align: end;
+}
+/* footer .container-subtitle{
+  padding:15px 0;
+} */
 /* ----------------------------------------- Responsive ----------------------------------------- */
 
 /* Tablets (pantallas con un ancho máximo de 1024px) */
