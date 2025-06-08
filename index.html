@@ -19,6 +19,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cal+Sans&display=swap" rel="stylesheet">
+    <!-- Animejs -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/4.0.2/anime.min.js"></script> -->
 
 </head>
 <body>
@@ -50,7 +53,7 @@
         </section>
         <!------------------------------------- Inicio -------------------------------------->
         <section id="inicio">
-            <nav class="navbar navbar-expand-lg ">
+            <nav class="navbar navbar-expand-lg" id="navbar">
                 <div class="container">
                   <a class="navbar-brand" href="#">
                     <img src="./img/ApolloLogo-03-white.webp" alt="">
@@ -257,6 +260,74 @@
                 </div>
             </div>
             
+        </section>
+        <!------------------------------------- Trabajos -------------------------------------->
+        
+        <section id="trabajos">
+            <div class="container">
+                <h2 class="title">CONOCÉ NUESTROS TRABAJOS</h2>
+
+                <div class="row contenedor-proyectos">
+                    <div class="col-7 col-left ">
+                        <div class="large-block box-block">
+                            <img src="https://picsum.photos/id/1025/600/400" alt="">
+                        </div>
+                        <div class="container-block">
+                            <div class="small-block box-block">
+                                <img src="https://picsum.photos/id/1020/600/400" alt="">
+                            </div>
+                            <div class="small-block box-block">
+                                <img src="https://picsum.photos/id/237/600/400" alt="">
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col-5 col-right ">
+                        <div class="bigest-block box-block">
+                            <img src="./img/background/proyect.png" alt="">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row contenedor-proyectos d-none">
+                    <div class="col-7 col-left ">
+                        <div class="large-block box-block">
+                            <img src="https://picsum.photos/id/1024/600/400" alt="">
+                        </div>
+                        <div class="container-block">
+                            <div class="small-block box-block">
+                                <img src="https://picsum.photos/id/1021/600/400" alt="">
+                            </div>
+                            <div class="small-block box-block">
+                                <img src="https://picsum.photos/id/238/600/400" alt="">
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col-5 col-right ">
+                        <div class="bigest-block box-block">
+                            <img src="./img/background/proyect2.png" alt="">
+                        </div>
+                    </div>
+                </div>
+                <!-- Botones de flechas -->
+                <div class="col-12 ">
+                    <div class="contenedor-flechas">
+                        <button class="arrow-block-text arrow-back">Anterior</button>
+                        <div class="span-arrows">
+                            <button class="arrow-block active">1</button>
+                            <button class="arrow-block">2</button>
+                            <!-- <button class="arrow-block">3</button>
+                            <button class="arrow-block">4</button> -->
+                        </div>
+                        <button class="arrow-block-text arrow-next">Despues</button>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section style="height:600px;">
+            <div ></div>
         </section>
     </main>
 
