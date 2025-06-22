@@ -558,6 +558,70 @@ article{
   justify-content: center;
   padding-top: 30px;
 }
+/* -------------------------------------------- Clientes -------------------------------------------- */
+
+#clientes{
+  background:var(--font);
+  min-height: 700px;
+}
+#clientes .title{
+  text-align: start;
+}
+#clientes .subtitle{
+  letter-spacing: normal;
+  font-size:1.3rem;
+  color:var(--blueDark-1);
+  padding:5px 0;
+  text-align: start;
+  /* font-weight: 300; */
+}
+
+.container-clientes{
+  display: flex;
+  justify-content: start;
+  /* gap:20px; */
+  flex-wrap: wrap;
+}
+.container-clientes .cliente-logo{
+  width: 200px;
+  height:200px;
+  padding: 20px;
+  border-left:1px dotted #ccc;
+  border-bottom:1px dotted #ccc;
+  border-top:1px dotted #ccc;
+  display: flex;
+  justify-content: center;
+  transition: all .4s ease-in-out;
+  align-items: center;
+}
+.container-clientes .cliente-logo img{
+  width: 100%;
+  filter: grayscale(100%) brightness(70%) contrast(120%);
+  transition: all .4s ease-in-out;
+}
+.container-clientes .cliente-logo:hover img{
+  filter:none;
+  transition: all .4s ease-in-out;
+ 
+}
+.container-clientes .cliente-logo:hover{
+  transition: all .4s ease-in-out;
+  background-color: #ece6e6;
+}
+/* prueba */
+/* .container-relative{
+  position: relative;
+  
+}
+.container-apollo-bg{
+  position: absolute;
+  top:-155px;
+  z-index:0;
+}
+#clientes .apollo-bg{
+  color:#f1e5e5;
+  font-size:30rem;
+} */
 
 /* ----------------------------------------- Especialidades ----------------------------------------- */
 #especialidades{
@@ -572,7 +636,7 @@ article{
 
 }
 
-#especialidades .title{
+#especialidades .title, #clientes .title{
   color:var(--blueDark-2);
   /* font-size:2.4rem; */
   font-weight: 600;
