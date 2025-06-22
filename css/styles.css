@@ -561,8 +561,11 @@ article{
 /* -------------------------------------------- Clientes -------------------------------------------- */
 
 #clientes{
-  background:var(--font);
-  min-height: 700px;
+  /* background:var(--font); */
+  background-image: url("../img/background/SeccionTrabajos5.webp");
+  background-size:100%;
+  
+  min-height: 800px;
 }
 #clientes .title{
   text-align: start;
@@ -579,16 +582,16 @@ article{
 .container-clientes{
   display: flex;
   justify-content: start;
-  /* gap:20px; */
+  gap:10px;
   flex-wrap: wrap;
 }
 .container-clientes .cliente-logo{
   width: 200px;
   height:200px;
   padding: 20px;
-  border-left:1px dotted #ccc;
+  /* border-left:1px dotted #ccc;
   border-bottom:1px dotted #ccc;
-  border-top:1px dotted #ccc;
+  border-top:1px dotted #ccc; */
   display: flex;
   justify-content: center;
   transition: all .4s ease-in-out;
@@ -596,8 +599,9 @@ article{
 }
 .container-clientes .cliente-logo img{
   width: 100%;
-  filter: grayscale(100%) brightness(70%) contrast(120%);
+  filter: grayscale(100%) brightness(70%) contrast(120%) drop-shadow(0 2px 10px rgba(0, 0, 0, 0.2));
   transition: all .4s ease-in-out;
+
 }
 .container-clientes .cliente-logo:hover img{
   filter:none;
@@ -606,7 +610,8 @@ article{
 }
 .container-clientes .cliente-logo:hover{
   transition: all .4s ease-in-out;
-  background-color: #ece6e6;
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.3));
+
 }
 /* prueba */
 /* .container-relative{
