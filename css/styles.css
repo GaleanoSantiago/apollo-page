@@ -1167,6 +1167,17 @@ footer .ul-nav{
   .blur-card .subtitle {
     font-size: 1.15rem;
   }
+
+  /* --------------- Clientes ------------------ */
+  #clientes{
+    background-size:100%;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-attachment: fixed;
+  }
+  .container-clientes{
+    justify-content: space-around;
+  }
 }
 
 @media screen and (max-width: 991px) {
@@ -1239,6 +1250,24 @@ footer .ul-nav{
   .b-card-img {
     height: 200px;
   }
+
+  /* --------------- Clientes ------------------ */
+  #clientes{
+    background-size:100%;
+    background-position: center;
+    background-attachment: fixed;
+  }
+  .container-clientes{
+    justify-content: start;
+    gap:20px;
+  }
+  .container-clientes .cliente-logo{
+    width: 150px;
+    height: 150px;
+  }
+  #clientes .subtitle{
+    font-size:1.1rem;
+  }
 }
 
 /* Celulares (pantallas con un ancho máximo de 767px) */
@@ -1306,6 +1335,14 @@ footer .ul-nav{
     height: 240px;
   }
 
+  /* --------------- Clientes ------------------ */
+  #clientes{
+    background-size:100%;
+    background-position: center;
+    background-repeat: repeat;
+    background-attachment: fixed;
+  }
+
   /* --------------- Contacto ------------------ */
   .form{
     width: 80%;
@@ -1334,7 +1371,21 @@ footer .ul-nav{
     padding: 20px 30px;
   }
   .b-card-img {
-    height: 220px;
+    height: 200px;
+  }
+
+  /* --------------- Clientes ------------------ */
+  
+  .container-clientes{
+    justify-content: space-around;
+    gap:10px;
+  }
+  .container-clientes .cliente-logo{
+    width: 140px;
+    height: 140px;
+  }
+  #clientes .subtitle{
+    font-size:1.1rem;
   }
 }
 
