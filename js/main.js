@@ -216,3 +216,54 @@ function animateExit(proyecto) {
   });
 }
 
+// ================ Para evitar bug en btns de modales ===========================
+
+const buttons = document.querySelectorAll('[data-bs-toggle="modal"]');
+let lastBoxBlock = null;
+
+buttons.forEach(btn => {
+  btn.addEventListener("click", function () {
+    const box = btn.closest(".box-block");
+    if (box) {
+      box.classList.add("force-show");
+      lastBoxBlock = box;
+    }
+  });
+});
+
+// Espera a que se cierre el modal y luego quita la clase .force-show con retardo
+const modal = document.getElementById("dynamicModal");
+if (modal) {
+  modal.addEventListener("hidden.bs.modal", function () {
+    if (lastBoxBlock) {
+      setTimeout(() => {
+        lastBoxBlock.classList.remove("force-show");
+        lastBoxBlock = null;
+      }, 100); // Espera 1 segundo tras cerrar el modal
+    }
+  });
+}
+
+// =============== Modales dinamicos ====================
+
+document.querySelectorAll('[data-modal-content-id]').forEach(button => {
+  button.addEventListener('click', () => {
+    const contentId = button.getAttribute('data-modal-content-id');
+    const modalType = button.getAttribute('data-modal-type');
+
+    const contentElement = document.getElementById(contentId);
+    const modalContent = document.getElementById('dynamicContent');
+
+    if (contentElement && modalContent) {
+      // Resetear clases del modal
+      modalContent.className = 'modal-content';
+      if (modalType) modalContent.classList.add(modalType);
+
+      // Clonar e insertar contenido dinámico
+      modalContent.innerHTML = '';
+      const clone = contentElement.cloneNode(true);
+      clone.style.display = 'block';
+      modalContent.appendChild(clone);
+    }
+  });
+});

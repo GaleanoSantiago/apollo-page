@@ -40,33 +40,6 @@ body {
   max-width: 100% !important;
   overflow-x: hidden !important;
   scroll-behavior: smooth;
-  
-  /* height:100vh; */
-  /* Fondo gradient 
-  background: hsla(212, 60%, 23%, 1);
-
-  background: linear-gradient(
-    45deg,
-    hsla(212, 60%, 23%, 1) 0%,
-    hsla(204, 70%, 53%, 1) 40%,
-    hsla(186, 85%, 75%, 1) 76%
-  );
-
-  background: -moz-linear-gradient(
-    45deg,
-    hsla(212, 60%, 23%, 1) 0%,
-    hsla(204, 70%, 53%, 1) 40%,
-    hsla(186, 85%, 75%, 1) 76%
-  );
-
-  background: -webkit-linear-gradient(
-    45deg,
-    hsla(212, 60%, 23%, 1) 0%,
-    hsla(204, 70%, 53%, 1) 40%,
-    hsla(186, 85%, 75%, 1) 76%
-  );
-
-  filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#17385D", endColorstr="#3498DB", GradientType=1 );*/
 
 }
 .cal-sans-regular {
@@ -511,18 +484,24 @@ article{
 /* ---------------------- Servicios ------------------------ */
 
 .contenedor-blur-cards {
-  display: flex;
+  /* display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 40px;
+  gap: 40px; */
   padding: 20px 0;
 }
+.col-blurCards{
+  display: flex;
+  justify-content: center;
+}
 .blur-card {
-  width: 550px;
+  width: 500px;
   border: 1px solid #fafafa;
   color: var(--font);
-  padding: 30px 40px;
-
+  padding: 30px 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   /* Efecto blur */
   /* From https://css.glass */
   background: rgba(255, 255, 255, 0.15);
@@ -538,7 +517,7 @@ article{
   font-size: 1.3rem;
 }
 .blur-card .title {
-  font-size: 2.1rem;
+  font-size: 1.9rem;
 }
 .b-card-body {
   text-align: justify;
@@ -546,7 +525,7 @@ article{
 }
 .b-card-img {
   overflow: hidden;
-  height: 300px;
+  height: 250px;
   border-radius: 20px;
   /* border:1px solid #fafafa; */
 }
@@ -799,7 +778,55 @@ article{
 }
 .box-block{
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  position: relative;
 }
+.box-block:hover .title-proy-bg{
+  bottom: 0;
+  transition: all .3s ease-in-out;
+}
+
+.title-proy-bg{
+  position: absolute;
+  bottom:-60px;
+  
+  width: 100%;
+  padding: 5px 10px;
+  transition: all .3s ease-in-out;
+
+
+  /* From https://css.glass */
+  background: rgba(255, 255, 255, 0.2);
+  /* border-radius: 16px; */
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+
+/* Hover o forzar visible con clase */
+.box-block:hover .title-proy-bg,
+.box-block.force-show .title-proy-bg {
+  bottom: 0;
+}
+
+
+.title-proy-bg .box-title{
+  color: var(--blueDark-1);
+  font-weight: bold;
+}
+.btn-btn-box{
+  padding: 10px 0;
+}
+.btn-btn-box .btn-main{
+  background: var(--blueDark-1);
+  color: var(--font);
+  border:none;
+  font-size:1rem;
+  padding:10px;
+}
+
+
 .large-block img, .small-block img, .bigest-block img{
   width: 100%;
 }
@@ -834,7 +861,110 @@ article{
   border: none;
 }
 
-/* ----------------------------------------- Responsive ----------------------------------------- */
+/* --------------------------------- Modales Personalizados --------------------------- */
+.modal-header{
+  border:none;
+  padding: 25px 40px;
+}
+.modal-header .btn-close{
+  border:2px solid var(--blueDark-1);
+  border-radius:50px;
+}
+.modal-content{
+  /* background: linear-gradient(60deg, rgba(250, 250, 250, 1) 0%, rgba(178, 214, 239, 1) 50%, rgba(52, 152, 219, 1) 100%); */
+  background:
+  url('../img/background/apollomodal.webp'),
+  linear-gradient(60deg,rgba(250, 250, 250, 1) 0%, rgba(178, 214, 239, 1) 57%, rgba(52, 152, 219, 1) 100%);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: top;
+  min-height: 300px;
+  border-radius: 20px;
+}
+
+.modal-body{
+  padding-bottom:30px;
+}
+.modal-body .container-title{
+  padding:10px 40px;
+}
+
+.modal-title{
+  font-size:2.2rem;
+  font-weight: bold;
+}
+.modal-body .right-side{
+  display: flex;
+  justify-content: center;
+}
+.modal-body .right-side img{
+  width: 80%;
+}
+.modal-body .left-side{
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-around; */
+}
+
+.text-content{
+  padding:30px;
+  color:var(--blueDark-1);
+}
+
+.btns-container-modal{
+  display: flex;
+  flex-direction: column;
+  gap:20px;
+  align-items: center;
+}
+.btns-container-modal .btn-main{
+  background-color: var(--font);
+  color: var(--blueDark-1);
+  border:2px solid var(--blueDark-1);
+  border-radius:10px;
+}
+
+.modal-mensaje{
+  background-color: var(--blueAsh-1);
+  padding:10px 15px;
+  border-radius: 5px;
+}
+
+/* Modal de software */
+
+.modal-software .laptop-img img{
+  width: 70%;
+}
+
+
+/* Modal de identidad */
+.modal-content.modal-identidad{
+  /* padding-top:20px; */
+  /* padding-left:10px; */
+  min-height: auto;
+}
+.modal-identidad .identidad-header-modal{
+  overflow: hidden;
+  height:350px;
+  position:relative;
+  padding: 0;
+}
+.modal-identidad .identidad-header-modal img{
+  width: 100%;
+  padding:0;
+} 
+
+.identidad-header-modal .btn-close{
+  position:absolute;
+  right:40px;
+  top:30px;
+  
+}
+
+.modal-identidad .modal-title{
+  text-align: end;
+}
+/* ----------------------------------------- Contacto ----------------------------------------- */
 #contacto, #trabajos{
   padding:60px 0;
 }
@@ -909,8 +1039,62 @@ footer .ul-nav{
 } */
 /* ----------------------------------------- Responsive ----------------------------------------- */
 
+/* Tablets grandes y laptops pequeños (hasta 1280px) */
+@media screen and (max-width: 1280px) {
+
+  .navbar-nav {
+    gap: 50px;
+  }
+  .nav-link {
+    font-size: 1rem;
+    letter-spacing: 0.05rem;
+  
+  }
+  /* ---------------- Inicio ---------------- */
+  #top-page{
+    padding-bottom:80px;
+  }
+  .presentacion h2 {
+    font-size: 5rem;
+    /* text-align: center; */
+  }
+  
+  .presentacion p {
+    font-size: 1.1rem;
+  }
+  .presentacion .presupuesto-text {
+    font-size: 1.2rem;
+  }
+
+  /* --------------- Blur Cards ------------------ */
+    
+  .blur-card {
+    width: 450px;
+    padding: 20px 30px;
+  }
+  .blur-card .title{
+    font-size:1.5rem;
+  }
+  .blur-card .subtitle {
+    letter-spacing: 0.1rem;
+    font-size: 1.1rem;
+  }
+  .b-card-img {
+    height: 240px;
+  }
+
+  
+  .title {
+    font-size:1.7rem;
+  }
+  .subtitle {
+    font-size:1.5rem;
+
+  }
+}
+
 /* Tablets (pantallas con un ancho máximo de 1024px) */
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1082px) {
   /* Estilos específicos para tablets */
 
   /* .construction-page{
@@ -919,7 +1103,144 @@ footer .ul-nav{
   .img-pet {
     width: 250px;
   }
+  
+  /* ---------------- Inicio ---------------- */
+  #top-page{
+    padding:50px;
+  }
+  .presentacion h2 {
+    font-size: 4rem;
+    /* text-align: center; */
+  }
+  
+  .presentacion p {
+    font-size: 1rem;
+  }
+  .presentacion .presupuesto-text {
+    font-size: 1rem;
+  }
+  .btn-main {
+    font-size: 1.1rem;
+    padding: 5px 15px;
+  }
+  /* ------------ Animacion del celular--------------- */
+  .container-img-inicio {
+    width: 250px;
+  }
+  .phone-box.box-1.in-place,
+  .phone-box.box-2.in-place,
+  .phone-box.box-3.in-place {
+    top: 110px;
+    left: 40px;
+  }
+
+  .phone-box {
+    width: 148px !important;
+    /* Para rotar 3d */
+    perspective: 2000px;
+  }
+
+  /* Cuando la animacion se activa */
+  .phone-box.box-1 {
+    left: -100px;
+    top: 60px;
+    
+  }
+  .phone-box.box-2 {
+    left: 20px;
+    top: 80px;
+    
+  }
+  .phone-box.box-3 {
+    top: 130px;
+    left: 58%;
+  }
+
+  /* --------------- Blur Cards ------------------ */
+    
+  .blur-card {
+    padding: 20px 25px;
+  }
+  .blur-card .title{
+    font-size:1.3rem;
+  }
+  .blur-card .subtitle {
+    font-size: 1.15rem;
+  }
 }
+
+@media screen and (max-width: 991px) {
+
+  /* ---------------- Inicio ---------------- */
+  #inicio{
+    background-position: left;
+    /* background-size: cover; */
+  }
+  .left-div{
+    width: 50%;
+    padding: 0;
+    padding-right: 20px;
+  }
+  .right-div{
+    width: 50%;
+  }
+  .presentacion h2 {
+    font-size: 3rem;
+    text-align: start;
+    letter-spacing: 0.2rem;
+    /* text-align: center; */
+  }
+  
+  /* .presentacion p {
+    font-size: 1rem;
+  }
+  .presentacion .presupuesto-text {
+    font-size: 1rem; 
+  }*/
+
+  /* ------------ Animacion del celular--------------- */
+  .container-img-inicio {
+    width: 220px;
+  }
+  .phone-box.box-1.in-place,
+  .phone-box.box-2.in-place,
+  .phone-box.box-3.in-place {
+    top: 90px;
+    left: 38px;
+  }
+
+  .phone-box {
+    width: 128px !important;
+    /* Para rotar 3d */
+    perspective: 2000px;
+  }
+
+  
+  /* Cuando la animacion se activa */
+  .phone-box.box-1 {
+    left: -80px;
+    top: 60px;
+  }
+  /* --------------- Blur Cards ------------------ */
+
+  #services-page{
+    padding:20px 0;
+  }
+    
+  .blur-card {
+    /* width: 100%; */
+    padding: 20px 15px;
+  }
+  
+  .b-card-body {
+    text-align: justify;
+    font-size: .9rem;
+  }
+  .b-card-img {
+    height: 200px;
+  }
+}
+
 /* Celulares (pantallas con un ancho máximo de 767px) */
 @media screen and (max-width: 767px) {
   /* Estilos específicos para celulares */
@@ -931,11 +1252,65 @@ footer .ul-nav{
   .title-page {
     font-size: 2rem;
   }
-
+  /* section {
+    padding: 20px 0;
+  }
+  article{
+    padding: 20px 0;
+  } */
   /* ============== Inicio ============== */
+  
+  #top-page, #services-page{
+    padding:20px 0;
+  }
+  #inicio{
+    padding-bottom:0;
+  }
   .left-div,
   .right-div {
     width: 100%;
+  }
+
+  .right-div{
+    /* border:1px solid red; */
+    height:300px;
+  }
+
+  .presentacion h2 {
+    font-size: 2.5rem;
+    text-align: start;
+    letter-spacing: 0.3rem;
+    /* text-align: center; */
+  }
+
+  /* --------------- Blur Cards ------------------ */
+  .col-blurCards{
+    padding:10px 0;
+  }
+  .blur-card {
+    /* width: 100%; */
+    padding: 20px 30px;
+  }
+  .blur-card .title{
+    font-size:1.3rem;
+  }
+  .blur-card .subtitle {
+    letter-spacing: 0.1rem;
+    font-size: 1.15rem;
+  }
+  .b-card-body {
+    text-align: justify;
+    font-size: .9rem;
+  }
+  .b-card-img {
+    height: 240px;
+  }
+
+  /* --------------- Contacto ------------------ */
+  .form{
+    width: 80%;
+    padding:40px ;
+    
   }
 }
 
@@ -952,5 +1327,23 @@ footer .ul-nav{
 
   .text-footer {
     font-size: 1rem;
+  }
+  /* --------------- Blur Cards ------------------ */
+  .blur-card {
+    width: 90%;
+    padding: 20px 30px;
+  }
+  .b-card-img {
+    height: 220px;
+  }
+}
+
+
+/* Celulares estándar (hasta 430px) */
+@media screen and (max-width: 430px) {
+  /* --------------- Blur Cards ------------------ */
+  .blur-card {
+    width: 90%;
+    padding: 20px;
   }
 }
