@@ -185,12 +185,12 @@ article{
   width: 100%;
   display: flex;
   justify-content: end;
-  gap: 80px;
+  gap: 70px;
 }
 
 .nav-link {
   color: var(--blueDark-1);
-  font-size: 1.13rem;
+  font-size: 1.1rem;
   font-weight: bold;
   letter-spacing: 0.05rem;
   filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.2));
@@ -239,7 +239,9 @@ article{
   /* background-size: cover; */
   padding-top:0;
 }
-
+#top-page{
+  padding-bottom:100px;
+}
 .container-wrap-inicio {
   display: flex;
   justify-content: center;
@@ -265,17 +267,17 @@ article{
   color: #fafafa;
 }
 .presentacion h2 {
-  font-size: 6rem;
+  font-size: 5rem;
   text-align: center;
 }
 
 .presentacion p {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
 }
 .presentacion .presupuesto-text {
   font-weight: bold;
   font-size: 1.3rem;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.1em;
 }
 
 .presentacion-img {
@@ -284,9 +286,9 @@ article{
   padding: 0 60px;
 }
 .container-img-inicio {
-  width: 350px;
+  width: 320px;
   position: relative;
-  animation: dropDownMain 1.5s ease-in-out;
+  animation: dropDownMain .9s ease-in-out;
   animation-delay: 0s;
 }
 .container-img-inicio img {
@@ -303,7 +305,7 @@ article{
   position: absolute;
   top: 0;
   /* left:0; */
-  width: 200px !important;
+  width: 190px !important;
   /* Para rotar 3d */
   perspective: 2000px;
 }
@@ -365,8 +367,8 @@ article{
 .phone-box.box-1.in-place,
 .phone-box.box-2.in-place,
 .phone-box.box-3.in-place {
-  top: 150px;
-  left: 60px;
+  top: 135px;
+  left: 51px;
   transition: all 0.4s ease-in-out;
   animation: none;
   box-shadow: none;
@@ -481,6 +483,7 @@ article{
   }
 }
 
+
 /* ---------------------- Servicios ------------------------ */
 
 .contenedor-blur-cards {
@@ -514,14 +517,14 @@ article{
 }
 .blur-card .subtitle {
   letter-spacing: 0.1em;
-  font-size: 1.3rem;
+  font-size: 1.1rem;
 }
 .blur-card .title {
-  font-size: 1.9rem;
+  font-size: 1.7rem;
 }
 .b-card-body {
   text-align: justify;
-  font-size: 1rem;
+  font-size: .9rem;
 }
 .b-card-img {
   overflow: hidden;
@@ -681,6 +684,7 @@ article{
   border-radius: 7px;
   filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.2));
   /* opacity: 0; */
+  
 }
 .box-tl .subtitle{
   font-size:1.4rem;
@@ -693,6 +697,7 @@ article{
 .box-tl .box-tl-body{
   text-align: center;
   font-weight: bold;
+  color:var(--blueDark-2);
 }
 
 .box-tl-btns{
@@ -706,7 +711,9 @@ article{
   font-size:1rem;
 }
 
-
+.box-mobile{
+  display: none;
+}
 
 .fadeup {
   opacity: 0;
@@ -766,10 +773,9 @@ article{
   width:100%;
   gap:15px;
 }
-.col-left .small-block{
-  width: 50%;
-  border-radius: 10px;
-  overflow: hidden;
+/* .col-left  */
+.small-block{
+  height:250px;
 }
 .bigest-block{
   overflow: hidden;
@@ -779,6 +785,9 @@ article{
 .box-block{
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+
 }
 .box-block:hover .title-proy-bg{
   bottom: 0;
@@ -858,9 +867,52 @@ article{
 .contenedor-flechas .arrow-block-text{
   background-color: transparent;
   color: var(--font);
-  border: none;
+  border: 1px solid var(--font);
+  border-radius:4px;
+  width:25px;
+
 }
 
+/* ======== Prueba en grid ========== */
+.grid-proyectos {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  grid-template-rows: auto auto;
+  gap: 15px;
+}
+
+/* El bloque grande de la izquierda arriba */
+.large-block {
+  grid-column: 1 / 2;
+  grid-row: 1;
+  height: 350px;
+  overflow: hidden;
+
+}
+
+/* Bloques pequeños (alineados en fila bajo el grande) */
+.small-block:nth-of-type(2) {
+  grid-column: 1 / 2;
+  grid-row: 2;
+  width: 49%; /* casi la mitad, con gap se completa */
+
+}
+
+.small-block:nth-of-type(3) {
+  grid-column: 1 / 2;
+  grid-row: 2;
+  width: 49%;
+  justify-self: end;
+
+}
+
+/* Bloque más grande de la derecha que abarca dos filas */
+.bigest-block {
+  grid-column: 2 / 4;
+  grid-row: 1 / span 2;
+  height: 615px;
+
+}
 /* --------------------------------- Modales Personalizados --------------------------- */
 .modal-header{
   border:none;
@@ -1000,6 +1052,7 @@ article{
   opacity: 1;
 }
 
+/* ----------------------------------------- Footer ----------------------------------------- */
 
 footer{
   background: var(--blueDark-2);
@@ -1034,6 +1087,12 @@ footer .icons-container{
 footer .ul-nav{
   text-align: end;
 }
+
+.footer-menu{
+  display: flex;
+  justify-content: end;
+}
+
 /* footer .container-subtitle{
   padding:15px 0;
 } */
@@ -1091,6 +1150,43 @@ footer .ul-nav{
     font-size:1.5rem;
 
   }
+  /* --------------- Especialidad ------------------ */
+
+  .box-tl{
+    width: 300px;
+  }
+  .box-tl .subtitle{
+    font-size:1.2rem;
+  }
+  /* --------------- Trabajos ------------------ */
+
+  .large-block{
+    height:300px;
+  }
+  .small-block{
+    height:230px;
+  }
+  .bigest-block{
+    height:550px;
+  }
+  .title-proy-bg .box-title{
+    font-size:1.3rem;
+  }
+
+  /* --------------- Modales ------------------ */
+  .modal .modal-body .right-side img{
+    width: 90%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover; 
+    display: block;
+  }
+  /*  Modal identidad */
+
+  .modal-header.identidad-header-modal{
+    height:250px;
+  }
+
+
 }
 
 /* Tablets (pantallas con un ancho máximo de 1024px) */
@@ -1178,10 +1274,59 @@ footer .ul-nav{
   .container-clientes{
     justify-content: space-around;
   }
+
+  
+  /* --------------- Trabajos ------------------ */
+
+  .large-block{
+    height:280px;
+  }
+  .bigest-block{
+    height:530px;
+  }
+
+  /* --------------- Modales ------------------ */
+  
+  .modal{
+    --bs-modal-width: 90%;
+  }
+  .modal-body .container-title{
+    padding:10px 20px;
+  }
+  .modal .modal-body .modal-title{
+    font-size:1.7rem;
+  }
 }
 
 @media screen and (max-width: 991px) {
+  /* ---------------- navbar ---------------- */
+  .navbar{
+    background-color: var(--blueDark-2);
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    padding:5px 0;
+  }
+  .navbar-nav{
+    gap:5px;
+    transition:all .4 ease-in-out;
+  }
+  .navbar-nav .nav-link{
+    color:var(--font);
+    font-size:1rem;
+    font-weight: normal;
+    padding:5px 10px;
+    text-align: center;
+    /* border-top:1px solid #ccc; */
+  }
+  .btn-nav{
+    background:inherit;
+  }
+  .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgb(209, 202, 202)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+  }
+  .navbar-toggler{
+    border:1px solid rgb(209, 202, 202);
 
+  }
   /* ---------------- Inicio ---------------- */
   #inicio{
     background-position: left;
@@ -1268,6 +1413,77 @@ footer .ul-nav{
   #clientes .subtitle{
     font-size:1.1rem;
   }
+
+  /* --------------- Especialidad ------------------ */
+  #especialidades{
+    background-position: center;
+  }
+  .box-tl{
+  width: 250px;
+    /* From https://css.glass */
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+  .box-tl .subtitle{
+    font-size:1.1rem;
+  }
+  .box-tl .box-tl-body{
+    font-weight: normal;
+    color:var(--blueDark-1);
+  }
+  .timeline-bar{
+    display: none;
+  }
+  .timeline-container .row{
+    gap:20px;
+  }
+  .row-desktop{
+    display: none;
+  }
+  .box-mobile{
+    display: block;
+  }
+
+  /* --------------- Trabajos ------------------ */
+
+  .large-block{
+    height:225px;
+    grid-column: 1 / 4;
+
+  }
+  .grid-proyectos {
+    grid-template-columns: 3fr 2fr;
+    /* gap: 15px; */
+  }
+
+  /* Bloques pequeños (alineados en fila bajo el grande) */
+  .small-block:nth-of-type(2) {
+    grid-column: 1 / 2;
+    grid-row: 2;
+    width: 100%; /* casi la mitad, con gap se completa */
+
+  }
+  .small-block{
+    height:200px;
+  }
+  .small-block:nth-of-type(3) {
+    grid-column: 1 / 2;
+    grid-row: 3;
+    width: 100%;
+    justify-self: start;
+    height:200px;
+  }
+  
+  .bigest-block{
+    height:415px;
+    grid-column: 2 / 4;
+    grid-row: 2 / span 3;
+  }
+  
 }
 
 /* Celulares (pantallas con un ancho máximo de 767px) */
@@ -1343,11 +1559,66 @@ footer .ul-nav{
     background-attachment: fixed;
   }
 
+  /* --------------- Trabajos ------------------ */
+
+  .large-block{
+    height:170px;
+    grid-column: 1 / 4;
+
+  }
+
+  .small-block:nth-of-type(3) {
+    grid-column: 1 / 2;
+    grid-row: 3;
+    width: 100%;
+    justify-self: start;
+    height:150px;
+  }
+  
+  .small-block{
+    height:150px;
+  }
+  .bigest-block{
+    height:315px;
+    grid-column: 2 / 4;
+    grid-row: 2 / span 3;
+  }
+  .title-proy-bg .box-title{
+    font-size:1rem;
+  }
+
+  .contenedor-flechas .arrow-block-text{
+    font-size:.9rem;
+  }
+  /* --------------- Modales ------------------ */
+  .modal .modal-header{
+    padding:10px 30px;
+  }
+  .modal .text-content {
+    padding:15px 20px;
+  }
+  .modal .modal-body .right-side img{
+    width: 50%;
+  }
+  .btns-container-modal{
+    padding:15px 0;
+  }
+
+  .modal-header.identidad-header-modal{
+    padding:0;
+    height:240px;
+  }
+
   /* --------------- Contacto ------------------ */
   .form{
     width: 80%;
     padding:40px ;
     
+  }
+  /* --------------- Footer ------------------ */
+
+  .footer-menu{
+    display: none;
   }
 }
 
@@ -1364,6 +1635,13 @@ footer .ul-nav{
 
   .text-footer {
     font-size: 1rem;
+  }
+  .title {
+    font-size:1.4rem;
+  }
+  .subtitle {
+    font-size:1.2rem;
+
   }
   /* --------------- Blur Cards ------------------ */
   .blur-card {
@@ -1387,14 +1665,128 @@ footer .ul-nav{
   #clientes .subtitle{
     font-size:1.1rem;
   }
+  /* --------------- Trabajos ------------------ */
+    
+    .large-block { 
+      height:230px;
+      grid-area: 1 / 1 / 2 / 5; 
+    }
+    .small-block:nth-of-type(2) { 
+      height:230px;
+      grid-area: 2 / 1 / 3 / 5; 
+    }
+    .small-block:nth-of-type(3) { 
+      height:230px;
+      grid-area: 3 / 1 / 4 / 5; 
+    }
+    .bigest-block { 
+      grid-area: 4 / 1 / 5 / 5; 
+    }
+    .contenedor-flechas .arrow-block-text{
+      font-size:.9rem;
+    }
+
+  /* --------------- Modales ------------------ */
+  .modal-content {
+    background-position: center 20%;
+  }
+
+  /* --------------- Footer ------------------ */
+  footer ul li, footer p{
+    font-size:.9rem;
+  }
+
+  
+
 }
 
 
 /* Celulares estándar (hasta 430px) */
 @media screen and (max-width: 430px) {
+  /* ---------------- navbar ---------------- */
+  .navbar{
+    padding:5px 0;
+  }
+  .navbar-toggler{
+    padding:2px 5px;
+  }
+  .navbar-brand{
+    display: flex;
+    justify-content: center;
+  }
+  .navbar-brand img{
+    width:80%;
+  }
   /* --------------- Blur Cards ------------------ */
   .blur-card {
     width: 90%;
     padding: 20px;
+  }
+  .container-clientes .cliente-logo{
+   
+    padding:5px;
+  }
+
+  /* --------------- Proyectos ------------------ */
+  .grid-proyectos{
+    gap:10px;
+  }
+  .large-block { 
+    height:200px;
+  }
+  .small-block:nth-of-type(2) { 
+    height:200px;
+  }
+  .small-block:nth-of-type(3) { 
+    height:200px;
+  }
+  .bigest-block { 
+    grid-area: 4 / 1 / 5 / 5; 
+    height:200px;
+
+  }
+  /* --------------- Modales ------------------ */
+  .modal .modal-body{
+    padding-top:0;
+  }
+  .modal .modal-body .modal-title{
+    font-size: 1.3rem;
+    text-align: center;  
+  }
+  .modal .text-content{
+    padding: 10px 15px;
+  }
+  .btns-container-modal{
+    padding:10px 0;
+  }
+
+  .modal-header.identidad-header-modal{
+    padding:0;
+    height:240px;
+  }
+  .modal-header.identidad-header-modal img{
+    width:100%;
+  }
+
+  /* --------------- Contacto ------------------ */
+
+  .form{
+    width: 95%;
+    padding:15px ;
+    
+  }
+
+  /* --------------- Footer ------------------ */
+  
+  footer .footer-right p{
+    font-size:1.1rem;
+    margin-bottom:3px;
+    /* text-align: center; */
+  }
+  /* footer .footer-right ul li{
+    text-align: center;
+  } */
+  footer .container-subtitle {
+    padding-top:10px;
   }
 }

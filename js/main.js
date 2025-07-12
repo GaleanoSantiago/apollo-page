@@ -81,21 +81,29 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   function activarAnimaciones() {
-    // Activar línea de tiempo
-    timelineFill.style.animation = `expandLine 7s ease forwards`;
-
-    // Activar fadeup en las cajas con delay escalonado
-    boxTl.forEach((el, index) => {
-      let groupIndex = index % 3;
-      let delay = ((groupIndex + 1) * totalDuration) / 3;
-      el.style.animation = `fadeUp 1s ease-out ${delay}s forwards`;
-
-      el.addEventListener("animationend", () => {
-        el.classList.remove("fadeup");
-        el.style.animation = ""; // Limpiar para posibles futuras repeticiones
+    const isMobile = window.innerWidth < 992;
+  
+    if (!isMobile) {
+      // Animación en pantallas grandes (>= 992px)
+  
+      // Línea de tiempo
+      timelineFill.style.animation = `expandLine 7s ease forwards`;
+  
+      // Animaciones escalonadas por grupo (de a 3)
+      boxTl.forEach((el, index) => {
+        let groupIndex = index % 3;
+        let delay = ((groupIndex + 1) * totalDuration) / 3;
+  
+        el.style.animation = `fadeUp 1s ease-out ${delay}s forwards`;
+  
+        el.addEventListener("animationend", () => {
+          el.classList.remove("fadeup");
+          el.style.animation = "";
+        });
       });
-    });
+    }
   }
+  
 
   // Scroll listener
   window.addEventListener("scroll", () => {
@@ -103,25 +111,41 @@ document.addEventListener("DOMContentLoaded", () => {
     const sectionTrabajosTop = sectionTrabajos.getBoundingClientRect().top;
     const windowHeight = window.innerHeight;
     const scrollY = window.scrollY || document.documentElement.scrollTop;
-
-
+  
+    const isMobile = window.innerWidth < 992;
+  
     if (!animacionesEjecutadas && sectionTop < windowHeight - 100) {
       activarAnimaciones();
       animacionesEjecutadas = true;
     }
+  
+    // 👇 Solo en mobile: animar cada caja cuando entra en pantalla
+    if (isMobile) {
+      boxTl.forEach(el => {
+        if (!el.classList.contains("animated")) {
+          const elTop = el.getBoundingClientRect().top;
+          if (elTop < windowHeight - 50) {
+            el.style.animation = `fadeUp 1s ease-out forwards`;
+            el.classList.add("animated");
+          }
+        }
+      });
+    }
+  
     // Animacion scroll de trabajos
     if (!animacionesEjecutadas2 && sectionTrabajosTop < windowHeight - 100) {
-      // animationGalery(proyectos[currentIndex]);
       animationGalery(proyectos[0]);
       animacionesEjecutadas2 = true;
     }
-    // Fijar navbar si scroll > 800px
+  
+    // Fijar navbar si scroll > 400px
     if (scrollY >= 400) {
       navbar.classList.add("fixed");
     } else {
       navbar.classList.remove("fixed");
     }
   });
+  
 });
 
 const proyectos = document.querySelectorAll(".contenedor-proyectos");
