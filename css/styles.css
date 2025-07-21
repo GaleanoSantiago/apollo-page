@@ -126,6 +126,10 @@ article{
   opacity: 0;
   transition: all 0.35s ease-in-out;
 }
+.btn-main:hover{
+  background-color: var(--whiteDegrade);
+  color: var(--blueDark-1);
+}
 .container-img-pet {
   display: flex;
   justify-content: center;
