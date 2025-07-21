@@ -764,7 +764,7 @@ article{
 .col-left .large-block{
   width: 100%;
   overflow: hidden;
-  height:350px;
+  /* height:350px; */
   border-radius: 10px;
 }
 .col-left .container-block{
@@ -948,13 +948,24 @@ article{
 .modal-body .right-side{
   display: flex;
   justify-content: center;
+  /* position: relative; */
 }
 .modal-body .right-side img{
   width: 80%;
+  height: auto;
+  object-fit: contain;
+}
+
+.modal-body .right-side img.large-img{
+  width: 60%;
+  border-radius:6px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+
 }
 .modal-body .left-side{
   display: flex;
   flex-direction: column;
+  
   /* justify-content: space-around; */
 }
 
@@ -974,6 +985,7 @@ article{
   color: var(--blueDark-1);
   border:2px solid var(--blueDark-1);
   border-radius:10px;
+  text-decoration: none;
 }
 
 .modal-mensaje{
@@ -1163,6 +1175,9 @@ footer .ul-nav{
   .large-block{
     height:300px;
   }
+  /* .large-block{
+
+  } */
   .small-block{
     height:230px;
   }
@@ -1176,9 +1191,9 @@ footer .ul-nav{
   /* --------------- Modales ------------------ */
   .modal .modal-body .right-side img{
     width: 90%;
-    aspect-ratio: 1 / 1;
+    /* aspect-ratio: 1 / 1;
     object-fit: cover; 
-    display: block;
+    display: block; */
   }
   /*  Modal identidad */
 
