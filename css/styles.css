@@ -943,6 +943,8 @@ article{
 }
 .modal-body .container-title{
   padding:10px 40px;
+  width: 100%;
+  order: 0;
 }
 
 .modal-title{
@@ -953,6 +955,7 @@ article{
   display: flex;
   justify-content: center;
   /* position: relative; */
+  order: 2;
 }
 .modal-body .right-side img{
   width: 80%;
@@ -961,9 +964,10 @@ article{
 }
 
 .modal-body .right-side img.large-img{
-  width: 60%;
-  border-radius:6px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  /* border-radius:6px; */
+  filter: drop-shadow(0 4px 30px rgba(0, 0, 0, 0.1));
+
 
 }
 .modal-body .left-side{
@@ -971,6 +975,7 @@ article{
   flex-direction: column;
   
   /* justify-content: space-around; */
+  order: 1;
 }
 
 .text-content{
@@ -987,15 +992,19 @@ article{
 .btns-container-modal .btn-main{
   background-color: var(--font);
   color: var(--blueDark-1);
-  border:2px solid var(--blueDark-1);
+  border:1px solid var(--blueDark-1);
   border-radius:10px;
   text-decoration: none;
 }
 
 .modal-mensaje{
   background-color: var(--blueAsh-1);
-  padding:10px 15px;
+  padding:10px 36px;
   border-radius: 5px;
+  /* box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); */
+  text-decoration: none;
+  color:var(--blueDark-1);
+  font-size:1.1rem;
 }
 
 /* Modal de software */
@@ -1581,7 +1590,7 @@ footer .ul-nav{
   /* --------------- Trabajos ------------------ */
 
   .large-block{
-    height:170px;
+    height:190px;
     grid-column: 1 / 4;
 
   }
@@ -1619,6 +1628,10 @@ footer .ul-nav{
   .modal .modal-body .right-side img{
     width: 50%;
   }
+  .modal .modal-body .right-side img.large-img{
+    width: 60%;
+
+  }
   .btns-container-modal{
     padding:15px 0;
   }
@@ -1627,6 +1640,17 @@ footer .ul-nav{
     padding:0;
     height:240px;
   }
+
+  .modal-body .left-side {
+    order: 2;
+  }
+
+  .modal-body .right-side {
+    order: 1;
+  }
+
+
+
 
   /* --------------- Contacto ------------------ */
   .form{
@@ -1707,7 +1731,7 @@ footer .ul-nav{
 
   /* --------------- Modales ------------------ */
   .modal-content {
-    background-position: center 20%;
+    background-position: center top;
   }
 
   /* --------------- Footer ------------------ */
@@ -1787,6 +1811,22 @@ footer .ul-nav{
     width:100%;
   }
 
+  .modal .modal-body .right-side img.large-img{
+    width: 80%;
+  }
+
+  .modal-body .text-content{
+    padding:0;
+    font-size:.9rem;
+  }
+  .btns-container-modal .btn-main{
+    font-size:1rem;
+    padding:5px 10px;
+  }
+  .modal-mensaje{
+    padding:5px 15px;
+    font-size:1rem;
+  }
   /* --------------- Contacto ------------------ */
 
   .form{
