@@ -806,7 +806,6 @@ article{
   padding: 5px 10px;
   transition: all .3s ease-in-out;
 
-
   /* From https://css.glass */
   background: rgba(255, 255, 255, 0.2);
   /* border-radius: 16px; */
@@ -814,6 +813,20 @@ article{
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
   border-top: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Estilos solo para el contenedor de la psicóloga */
+.psicologa-container {
+  /* Aquí agregas tus nuevos estilos de tamaño */
+  width: 900px; 
+  height: 700px;
+}
+
+/* Opcional: para asegurarte de que la imagen se ajuste al nuevo tamaño del contenedor */
+.psicologa-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* o contain, según lo que prefieras */
 }
 
 
