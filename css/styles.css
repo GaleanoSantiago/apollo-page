@@ -1,19 +1,1864 @@
 /*---------------------------- Aspectos Generales ----------------------------*/
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing: border-box;
+/* CalSans Regular */
+@font-face {
+  font-family: "CalSans";
+  src: url("../fonts/calsans/CalSans-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
 }
 
-body{
-    /* font-family: sans-serif; */
+/* Figtree Regular */
+@font-face {
+  font-family: "Figtree";
+  src: url("../fonts/figtree/static/Figtree-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --blueDegrade: #3498db;
+  --whiteDegrade: #faf2ce;
+  --blueDark-1: #17385d;
+  --blueDark-2: #071328;
+
+  --blueLight: #d0e3ea;
+  --blueAsh-1: #95b1c9;
+  --blueAsh-2: #80a2b7;
+  --orangeLight: #e88370;
+  --orangeDark: #db6758;
+  --font: #fafafa;
+}
+body {
+  font-family: "Figtree", sans-serif;
+
+  max-width: 100% !important;
+  overflow-x: hidden !important;
+  scroll-behavior: smooth;
+
+}
+.cal-sans-regular {
+  font-family: "Cal Sans", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+h1, h2 {
+  font-family: "CalSans", sans-serif;
+}
+
+p {
+  font-family: "Figtree", sans-serif;
+}
+section {
+  padding: 50px 0;
+}
+article{
+  padding:50px 0;
+}
+.container-flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.title,
+.subtitle {
+  color: var(--font);
+  text-align: center;
+}
+.title {
+  letter-spacing: 0.1em;
+}
+.subtitle {
+  font-weight: lighter !important;
+  letter-spacing: 0.4em;
+}
+/*---------------------------- Construction Page ----------------------------*/
+
+.construction-page {
+  height: 100vh;
+  /* background: #faf2ce; */
+  /* background: linear-gradient(180deg, rgba(250, 242, 206, 1) 5%, #608191 87%); */
+  display: none;
+}
+
+.construction-page .container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.img-logo {
+  display: flex;
+  justify-content: center;
+}
+.img-logo img {
+  width: 50px;
+  opacity: 0;
+  transition: all 0.2s ease-in-out;
+}
+
+.title-page {
+  text-align: center;
+  color: var(--whiteDegrade);
+  font-size: 2.3rem;
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+}
+.title-page.n_contacto {
+  opacity: 1;
+  font-size: 2rem;
+}
+.n_contacto_div {
+  display: flex;
+  justify-content: center;
+}
+.n_contacto_div .btn-main {
+  background: var(--whiteDegrade);
+  color: var(--blueAsh-2);
+  border: none;
+  opacity: 0;
+  transition: all 0.35s ease-in-out;
+}
+.btn-main:hover{
+  background-color: var(--whiteDegrade);
+  color: var(--blueDark-1);
+}
+.container-img-pet {
+  display: flex;
+  justify-content: center;
+}
+.img-pet {
+  width: 300px;
+}
+.img-pet img {
+  width: 100%;
+  /* animation: float 6s ease-in-out infinite; */
+  position: relative;
+  animation: dropDown 4s forwards;
+}
+
+/* Animación de caída inicial */
+@keyframes dropDown {
+  0% {
+    top: -500px;
+  }
+  100% {
+    top: 0;
+  }
+}
+
+/* Animación de flotación */
+@keyframes float {
+  0% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-20px) rotate(1deg);
+  }
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+}
+/* ------------------------- Footer ------------------ */
+
+.text-footer {
+  text-align: center;
+  color: var(--whiteDegrade);
+  font-size: 1.3rem;
+  transition: all 0.5s ease-in-out;
+  opacity: 0;
+}
+
+/* ---------------------- Navbar ------------------------ */
+
+.navbar-brand {
+  width: 40px;
+}
+
+.navbar-brand img {
+  width: 100%;
+}
+.navbar-nav {
+  width: 100%;
+  display: flex;
+  justify-content: end;
+  gap: 70px;
+}
+
+.nav-link {
+  color: var(--blueDark-1);
+  font-size: 1.1rem;
+  font-weight: bold;
+  letter-spacing: 0.05rem;
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.2));
+
+}
+.nav-link.active {
+  text-decoration: underline;
+  color: var(--blueDark-1) !important;
+}
+.nav-link.btn-nav {
+  background-color: var(--blueDark-1) !important;
+  color: #fafafa;
+  border-radius: 7px;
+}
+
+/*-------------- Navbar fixed ---------------- */
+
+.navbar.fixed{
+  background: var(--blueDark-2);
+  color:var(--font);
+  position: fixed;
+  width: 100%;
+  z-index:3;
+  /* transform: translateY(20px); */
+  animation: fadeDown .4s ease-out forwards;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+
+.navbar.fixed .nav-link, .navbar.fixed .nav-link.active{
+  color:var(--whiteDegrade) !important;
+  font-weight: normal;
+  letter-spacing: 0.05rem;
+}
+
+/* Nav en construcion page */
+/* nav.navbar{
+  display: none;
+} */
+
+/* Nav en construcion page */
+/* ---------------------- Inicio ------------------------ */
+#inicio{
+  /* display: none; */
+  background-image: url("../img/background/Seccion_1.webp");
+  background-position: center;
+  /* background-size: cover; */
+  padding-top:0;
+}
+#top-page{
+  padding-bottom:100px;
+}
+.container-wrap-inicio {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  /* padding:50px 0; */
+}
+.left-div {
+  width: 45%;
+}
+
+.right-div {
+  width: 55%;
+}
+
+.btn-main {
+  background: var(--whiteDegrade);
+  color: var(--blueDark-1);
+  font-size: 1.25rem;
+  padding: 0 15px;
+}
+.presentacion {
+  padding: 0 20px;
+  color: #fafafa;
+}
+.presentacion h2 {
+  font-size: 5rem;
+  text-align: center;
+}
+
+.presentacion p {
+  font-size: 1.1rem;
+}
+.presentacion .presupuesto-text {
+  font-weight: bold;
+  font-size: 1.3rem;
+  letter-spacing: 0.1em;
+}
+
+.presentacion-img {
+  display: flex;
+  justify-content: center;
+  padding: 0 60px;
+}
+.container-img-inicio {
+  width: 320px;
+  position: relative;
+  animation: dropDownMain .9s ease-in-out;
+  animation-delay: 0s;
+}
+.container-img-inicio img {
+  width: 100%;
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.15));
+}
+
+.phone-inicio {
+  /* width:350px; */
+  position: absolute;
+  animation: floatUpDown 3s linear infinite;
+}
+.phone-box {
+  position: absolute;
+  top: 0;
+  /* left:0; */
+  width: 190px !important;
+  /* Para rotar 3d */
+  perspective: 2000px;
+}
+.phone-box img {
+  border-radius: 11px;
+  /* transform: rotate3d(1, -2, 0.4, 0deg); */
+  transition: transform 0.6s ease;
+  transform-style: preserve-3d;
+}
+.phone-box.box-1 {
+  left: -100px;
+  top: 60px;
+  z-index: 1;
+  animation: floatOrbit1 5s linear infinite;
+  transition: all 0.4s ease-in-out;
+}
+.phone-box.box-2 {
+  left: 30px;
+  top: 100px;
+  z-index: 2;
+  /* animacion */
+  /* animation: floatDiagonal 3s linear infinite; */
+  animation: floatOrbit3 3s linear infinite;
+  transition: all 0.4s ease-in-out;
+}
+.phone-box.box-3 {
+  z-index: 1;
+  top: 180px;
+  left: 58%;
+  animation: floatOrbit3 4s linear infinite;
+  transition: all 0.4s ease-in-out;
+}
+.phone-box.box-1 img {
+  transform: rotate3d(1, -2, -0.8, 20deg);
+  /* transform: rotate3d(1, -1.3, 0.4, 30deg); */
+
+  box-shadow: 11px 12px 20px 0px rgba(0, 0, 0, 0.15);
+  -webkit-box-shadow: 11px 12px 20px 0px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 11px 12px 20px 0px rgba(0, 0, 0, 0.15);
+}
+
+.phone-box.box-2 img {
+  transform: rotate3d(1, -1.3, 0.4, 30deg);
+  box-shadow: 8px 12px 9px 0px rgba(0, 0, 0, 0.15);
+  -webkit-box-shadow: 8px 12px 9px 0px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 8px 12px 10px 9px rgba(0, 0, 0, 0.15);
+}
+.phone-box.box-3 img {
+  transform: rotate3d(1, -2, 2.5, 25deg);
+  /* transform: rotate3d(1, -1.3, 0.4, 30deg); */
+
+  box-shadow: -6px 9px 8px 0px rgba(0, 0, 0, 0.15);
+  -webkit-box-shadow: -6px 9px 8px 0px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: -6px 9px 8px 0px rgba(0, 0, 0, 0.15);
+}
+
+/* Para el principio de la animacion */
+
+.phone-box.box-1.in-place,
+.phone-box.box-2.in-place,
+.phone-box.box-3.in-place {
+  top: 135px;
+  left: 51px;
+  transition: all 0.4s ease-in-out;
+  animation: none;
+  box-shadow: none;
+  animation: floatUpDown 3s linear infinite;
+}
+.phone-box.box-1:hover,
+.phone-box.box-2:hover,
+.phone-box.box-3:hover {
+  transform: scale(2);
+}
+
+.container-img-inicio .in-place img {
+  filter: none;
+}
+.phone-box.box-1.in-place img,
+.phone-box.box-2.in-place img,
+.phone-box.box-3.in-place img {
+  transform: rotate3d(1, -1.3, 0.5, 40deg);
+  box-shadow: none;
+  transition: all 0.4s ease-in-out;
+}
+
+/* Animaciones */
+
+/* Animación de caída inicial */
+@keyframes dropDownMain {
+  0% {
+    top: -300px;
+    opacity: 0;
+  }
+  65% {
+    opacity: 0;
+  }
+  100% {
+    top: 0;
+    opacity: 1;
+  }
+}
+
+@keyframes floatOrbit1 {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  25% {
+    transform: translate(8px, -6px) scale(0.995);
+  }
+  50% {
+    transform: translate(-6px, 10px) scale(1);
+  }
+  75% {
+    transform: translate(4px, 4px) scale(0.997);
+  }
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+}
+@keyframes floatOrbit2 {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  20% {
+    transform: translate(-5px, -8px) scale(1.02);
+  }
+  40% {
+    transform: translate(6px, 4px) scale(1);
+  }
+  60% {
+    transform: translate(-7px, 6px) scale(1.02);
+  }
+  80% {
+    transform: translate(4px, -6px) scale(1);
+  }
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+}
+@keyframes floatOrbit3 {
+  0% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  25% {
+    transform: translate(5px, 5px) scale(0.998);
+  }
+  50% {
+    transform: translate(0px, 10px) scale(0.996);
+  }
+  75% {
+    transform: translate(-5px, 5px) scale(1);
+  }
+  100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+}
+
+@keyframes floatUpDown {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes floatDiagonal {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(10px, 10px);
+  }
+}
+
+
+/* ---------------------- Servicios ------------------------ */
+
+.contenedor-blur-cards {
+  /* display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 40px; */
+  padding: 20px 0;
+}
+.col-blurCards{
+  display: flex;
+  justify-content: center;
+}
+.blur-card {
+  width: 500px;
+  border: 1px solid #fafafa;
+  color: var(--font);
+  padding: 30px 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /* Efecto blur */
+  /* From https://css.glass */
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  /* border: none; */
+}
+.blur-card .subtitle {
+  letter-spacing: 0.1em;
+  font-size: 1.1rem;
+}
+.blur-card .title {
+  font-size: 1.7rem;
+}
+.b-card-body {
+  text-align: justify;
+  font-size: .9rem;
+}
+.b-card-img {
+  overflow: hidden;
+  height: 250px;
+  border-radius: 20px;
+  /* border:1px solid #fafafa; */
+}
+.b-card-img img {
+  width: 100%;
+}
+
+.b-card-btns {
+  display: flex;
+  justify-content: center;
+  padding-top: 30px;
+}
+/* -------------------------------------------- Clientes -------------------------------------------- */
+
+#clientes{
+  /* background:var(--font); */
+  background-image: url("../img/background/SeccionTrabajos5.webp");
+  background-size:cover;
+  /* background-attachment: fixed; */
+  min-height: 800px;
+}
+#clientes .title{
+  text-align: start;
+}
+#clientes .subtitle{
+  letter-spacing: normal;
+  font-size:1.3rem;
+  color:var(--blueDark-1);
+  padding:5px 0;
+  text-align: start;
+  /* font-weight: 300; */
+}
+
+.container-clientes{
+  display: flex;
+  justify-content: start;
+  gap:10px;
+  flex-wrap: wrap;
+}
+.container-clientes .cliente-logo{
+  width: 200px;
+  height:200px;
+  padding: 20px;
+  /* border-left:1px dotted #ccc;
+  border-bottom:1px dotted #ccc;
+  border-top:1px dotted #ccc; */
+  display: flex;
+  justify-content: center;
+  transition: all .35s ease-in-out;
+  align-items: center;
+}
+.container-clientes .cliente-logo img{
+  width: 100%;
+  filter: grayscale(100%) brightness(70%) contrast(120%) drop-shadow(0 2px 10px rgba(0, 0, 0, 0.2));
+  transition: all .35s ease-in-out;
+
+}
+.container-clientes .cliente-logo:hover img{
+  filter:none;
+  transition: all .35s ease-in-out;
+ 
+}
+.container-clientes .cliente-logo:hover{
+  transition: all .35s ease-in-out;
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.3));
+
+}
+/* prueba */
+/* .container-relative{
+  position: relative;
+  
+}
+.container-apollo-bg{
+  position: absolute;
+  top:-155px;
+  z-index:0;
+}
+#clientes .apollo-bg{
+  color:#f1e5e5;
+  font-size:30rem;
+} */
+
+/* ----------------------------------------- Especialidades ----------------------------------------- */
+#especialidades{
+  /* min-height: 800px; */
+  /* background-image: url("../img/background/astronaunt-min.webp"); */
+  background-image:
+  linear-gradient(rgba(151, 198, 230, 0.7), rgba(112, 154, 182, 0.5)),
+  url("../img/background/astronaunt-min.webp");
+
+  background-size: cover;
+  background-attachment: fixed;
+
+}
+
+#especialidades .title, #clientes .title{
+  color:var(--blueDark-2);
+  /* font-size:2.4rem; */
+  font-weight: 600;
+  text-transform: uppercase;
+
+}
+.timeline-container{
+  display: flex;
+  flex-direction: column;
+  gap:15px;
+  padding: 25px 0;
+}
+.timeline-container .row{
+  justify-content: space-around;
+}
+.timeline-bar {
+  width: 100%;
+  height: 5px;
+  /* background-color: transparent; */
+  position: relative;
+  /* overflow: hidden; */
+  display:flex;
+  align-items: center;
+
+}
+
+.timeline-fill {
+  height: 100%;
+  width: 0%;
+  background-color: var(--blueDark-1);
+  /* animation: expandLine 7s ease forwards; */
+}
+/* Navecita */
+.fa-shuttle-space{
+  font-size:1.9rem;
+  color:var(--blueDark-1);
+}
+
+@keyframes expandLine {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+
+.box-tl{
+  width:350px;
+  color:var(--blueDark-2);
+  padding:15px;
+  display: flex;
+  flex-direction: column;
+  gap:10px;
+  /* border:1px solid var(--blueDark-1); */
+  border-radius: 7px;
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.2));
+  /* opacity: 0; */
+  
+}
+.box-tl .subtitle{
+  font-size:1.4rem;
+  font-weight: bold !important;
+  color:var(--blueDark-2);
+  letter-spacing: normal !important;
+  
+}
+
+.box-tl .box-tl-body{
+  text-align: center;
+  font-weight: bold;
+  color:var(--blueDark-2);
+}
+
+.box-tl-btns{
+  display:flex;
+  justify-content: center;
+}
+
+.box-tl .btn-main{
+  background-color: var(--blueDark-1);
+  color:var(--blueLight);
+  font-size:1rem;
+}
+
+.box-mobile{
+  display: none;
+}
+
+.fadeup {
+  opacity: 0;
+  transform: translateY(20px);
+  /* animation: fadeUp 1s ease-out forwards; */
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeDown {
+  0%{
+    transform: translateY(-50px);
+  }   
+  100%{
+    /* opacity: 1; */
+    transform: translateY(0);
+  }
+}
+
+/* ----------------------------------------- Trabajos ----------------------------------------- */
+#trabajos-section{
+  background-image: url("../img/background/Seccion_2Large.webp");
+  background-position: center;
+  padding-top:0;
+}
+/* #trabajos{
+  
+} */
+#trabajos .title{
+  color:var(--blueDark-2);
+}
+.contenedor-proyectos{
+  padding:20px;
+  /* border:1px solid #ccc; */
+}
+
+.col-left{
+  display: flex;
+  flex-wrap: wrap;
+  gap:15px;
+}
+
+.col-left .large-block{
+  width: 100%;
+  overflow: hidden;
+  /* height:350px; */
+  border-radius: 10px;
+}
+.col-left .container-block{
+  display: flex;
+  /* border: 1px solid #fff; */
+  width:100%;
+  gap:15px;
+}
+/* .col-left  */
+.small-block{
+  height:250px;
+}
+.bigest-block{
+  overflow: hidden;
+  height: 600px;
+  border-radius: 10px;
+}
+.box-block{
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+
+}
+.box-block:hover .title-proy-bg{
+  bottom: 0;
+  transition: all .3s ease-in-out;
+}
+
+.title-proy-bg{
+  position: absolute;
+  bottom:-60px;
+  
+  width: 100%;
+  padding: 5px 10px;
+  transition: all .3s ease-in-out;
+
+  /* From https://css.glass */
+  background: rgba(255, 255, 255, 0.2);
+  /* border-radius: 16px; */
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Estilos solo para el contenedor de la psicóloga */
+.psicologa-container {
+  /* Aquí agregas tus nuevos estilos de tamaño */
+  width: 900px; 
+  height: 700px;
+}
+
+/* Opcional: para asegurarte de que la imagen se ajuste al nuevo tamaño del contenedor */
+.psicologa-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* o contain, según lo que prefieras */
+}
+
+
+/* Hover o forzar visible con clase */
+.box-block:hover .title-proy-bg,
+.box-block.force-show .title-proy-bg {
+  bottom: 0;
+}
+
+
+.title-proy-bg .box-title{
+  color: var(--blueDark-1);
+  font-weight: bold;
+}
+.btn-btn-box{
+  padding: 10px 0;
+}
+.btn-btn-box .btn-main{
+  background: var(--blueDark-1);
+  color: var(--font);
+  border:none;
+  font-size:1rem;
+  padding:10px;
+}
+
+
+.large-block img, .small-block img, .bigest-block img{
+  width: 100%;
+}
+
+.contenedor-flechas{
+  display: flex;
+  justify-content: end;
+  color: var(--font);
+  gap:10px;
+  padding:10px 0;
+}
+.contenedor-flechas .arrow-block{
+  background: var(--font);
+  /* padding:1px 8px; */
+  width:25px;
+  border:none;
+  border-radius: 2px;
+  color:var(--blueDegrade);
+  font-weight: bold;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  transition: all .3s ease-in-out;
+
+}
+.contenedor-flechas .arrow-block.active{
+  background:var(--blueDegrade);
+  color:var(--font);
+  transition: all .3s ease-in-out;
+}
+.contenedor-flechas .arrow-block-text{
+  background-color: transparent;
+  color: var(--font);
+  border: 1px solid var(--font);
+  border-radius:4px;
+  width:25px;
+
+}
+
+/* ======== Prueba en grid ========== */
+.grid-proyectos {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  grid-template-rows: auto auto;
+  gap: 15px;
+}
+
+/* El bloque grande de la izquierda arriba */
+.large-block {
+  grid-column: 1 / 2;
+  grid-row: 1;
+  height: 350px;
+  overflow: hidden;
+
+}
+
+/* Bloques pequeños (alineados en fila bajo el grande) */
+.small-block:nth-of-type(2) {
+  grid-column: 1 / 2;
+  grid-row: 2;
+  width: 49%; /* casi la mitad, con gap se completa */
+
+}
+
+.small-block:nth-of-type(3) {
+  grid-column: 1 / 2;
+  grid-row: 2;
+  width: 49%;
+  justify-self: end;
+
+}
+
+/* Bloque más grande de la derecha que abarca dos filas */
+.bigest-block {
+  grid-column: 2 / 4;
+  grid-row: 1 / span 2;
+  height: 615px;
+
+}
+/* --------------------------------- Modales Personalizados --------------------------- */
+.modal-header{
+  border:none;
+  padding: 25px 40px;
+}
+.modal-header .btn-close{
+  border:2px solid var(--blueDark-1);
+  border-radius:50px;
+}
+.modal-content{
+  /* background: linear-gradient(60deg, rgba(250, 250, 250, 1) 0%, rgba(178, 214, 239, 1) 50%, rgba(52, 152, 219, 1) 100%); */
+  background:
+  url('../img/background/apollomodal.webp'),
+  linear-gradient(60deg,rgba(250, 250, 250, 1) 0%, rgba(178, 214, 239, 1) 57%, rgba(52, 152, 219, 1) 100%);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: top;
+  min-height: 300px;
+  border-radius: 20px;
+}
+
+.modal-body{
+  padding-bottom:30px;
+}
+.modal-body .container-title{
+  padding:10px 40px;
+  width: 100%;
+  order: 0;
+}
+
+.modal-title{
+  font-size:2.2rem;
+  font-weight: bold;
+}
+.modal-body .right-side{
+  display: flex;
+  justify-content: center;
+  /* position: relative; */
+  order: 2;
+}
+.modal-body .right-side img{
+  width: 80%;
+  height: auto;
+  object-fit: contain;
+}
+
+.modal-body .right-side img.large-img{
+  width: 100%;
+  /* border-radius:6px; */
+  filter: drop-shadow(0 4px 30px rgba(0, 0, 0, 0.1));
+
+
+}
+.modal-body .left-side{
+  display: flex;
+  flex-direction: column;
+  
+  /* justify-content: space-around; */
+  order: 1;
+}
+
+.text-content{
+  padding:30px;
+  color:var(--blueDark-1);
+}
+
+.btns-container-modal{
+  display: flex;
+  flex-direction: column;
+  gap:20px;
+  align-items: center;
+}
+.btns-container-modal .btn-main{
+  background-color: var(--font);
+  color: var(--blueDark-1);
+  border:1px solid var(--blueDark-1);
+  border-radius:10px;
+  text-decoration: none;
+}
+
+.modal-mensaje{
+  background-color: var(--blueAsh-1);
+  padding:10px 36px;
+  border-radius: 5px;
+  /* box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); */
+  text-decoration: none;
+  color:var(--blueDark-1);
+  font-size:1.1rem;
+}
+
+/* Modal de software */
+
+.modal-software .laptop-img img{
+  width: 70%;
+}
+
+
+/* Modal de identidad */
+.modal-content.modal-identidad{
+  /* padding-top:20px; */
+  /* padding-left:10px; */
+  min-height: auto;
+}
+.modal-identidad .identidad-header-modal{
+  overflow: hidden;
+  height:350px;
+  position:relative;
+  padding: 0;
+}
+.modal-identidad .identidad-header-modal img{
+  width: 100%;
+  padding:0;
+} 
+
+.identidad-header-modal .btn-close{
+  position:absolute;
+  right:40px;
+  top:30px;
+  
+}
+
+.modal-identidad .modal-title{
+  text-align: end;
+}
+/* ----------------------------------------- Contacto ----------------------------------------- */
+#contacto, #trabajos{
+  padding:60px 0;
+}
+
+.contenedor-form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap:20px;
+}
+.form{
+  width: 600px;
+  padding:40px ;
+  /* Efecto blur */
+  /* From https://css.glass */
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.form input, .form input:active, .form input:focus, .form textarea, .form textarea:focus{
+  background-color: transparent;
+  border:none;
+  border-bottom:1px solid #ccc;
+  color:var(--font);
+  box-shadow: none;
+}
+.form input::placeholder, .form textarea::placeholder {
+  color: #ccc;
+  opacity: 1;
+}
+
+/* ----------------------------------------- Footer ----------------------------------------- */
+
+footer{
+  background: var(--blueDark-2);
+  /* height:300px; */
+  color:var(--font);
+  padding-top:60px;
+}
+footer a{
+  text-decoration:none;
+  color:var(--font);
+  font-weight: bold;
+}
+footer ul{
+  padding: 0;
+}
+footer ul li{
+  list-style:none;
+}
+
+footer .icons-container{
+  display: flex;
+  gap:10px;
+  justify-content: center;
+}
+
+.icons-container .icon-red{
+  width:40px;
+  height:40px;
+  background-color: var(--whiteDegrade);
+  border-radius:5px;
+}
+footer .ul-nav{
+  text-align: end;
+}
+
+.footer-menu{
+  display: flex;
+  justify-content: end;
+}
+
+/* footer .container-subtitle{
+  padding:15px 0;
+} */
+/* ----------------------------------------- Responsive ----------------------------------------- */
+
+/* Tablets grandes y laptops pequeños (hasta 1280px) */
+@media screen and (max-width: 1280px) {
+
+  .navbar-nav {
+    gap: 50px;
+  }
+  .nav-link {
+    font-size: 1rem;
+    letter-spacing: 0.05rem;
+  
+  }
+  /* ---------------- Inicio ---------------- */
+  #top-page{
+    padding-bottom:80px;
+  }
+  .presentacion h2 {
+    font-size: 5rem;
+    /* text-align: center; */
+  }
+  
+  .presentacion p {
+    font-size: 1.1rem;
+  }
+  .presentacion .presupuesto-text {
+    font-size: 1.2rem;
+  }
+
+  /* --------------- Blur Cards ------------------ */
     
-    max-width: 100% !important;
-    overflow-x: hidden !important;
-    scroll-behavior: smooth;          
+  .blur-card {
+    width: 450px;
+    padding: 20px 30px;
+  }
+  .blur-card .title{
+    font-size:1.5rem;
+  }
+  .blur-card .subtitle {
+    letter-spacing: 0.1rem;
+    font-size: 1.1rem;
+  }
+  .b-card-img {
+    height: 240px;
+  }
+
+  
+  .title {
+    font-size:1.7rem;
+  }
+  .subtitle {
+    font-size:1.5rem;
+
+  }
+  /* --------------- Especialidad ------------------ */
+
+  .box-tl{
+    width: 300px;
+  }
+  .box-tl .subtitle{
+    font-size:1.2rem;
+  }
+  /* --------------- Trabajos ------------------ */
+
+  .large-block{
+    height:300px;
+  }
+  /* .large-block{
+
+  } */
+  .small-block{
+    height:230px;
+  }
+  .bigest-block{
+    height:550px;
+  }
+  .title-proy-bg .box-title{
+    font-size:1.3rem;
+  }
+
+  /* --------------- Modales ------------------ */
+  .modal .modal-body .right-side img{
+    width: 90%;
+    /* aspect-ratio: 1 / 1;
+    object-fit: cover; 
+    display: block; */
+  }
+  /*  Modal identidad */
+
+  .modal-header.identidad-header-modal{
+    height:250px;
+  }
+
+
 }
 
-section{
-    padding:40px 0;
+/* Tablets (pantallas con un ancho máximo de 1024px) */
+@media screen and (max-width: 1082px) {
+  /* Estilos específicos para tablets */
+
+  /* .construction-page{
+        height:auto;
+    } */
+  .img-pet {
+    width: 250px;
+  }
+  
+  /* ---------------- Inicio ---------------- */
+  #top-page{
+    padding:50px;
+  }
+  .presentacion h2 {
+    font-size: 4rem;
+    /* text-align: center; */
+  }
+  
+  .presentacion p {
+    font-size: 1rem;
+  }
+  .presentacion .presupuesto-text {
+    font-size: 1rem;
+  }
+  .btn-main {
+    font-size: 1.1rem;
+    padding: 5px 15px;
+  }
+  /* ------------ Animacion del celular--------------- */
+  .container-img-inicio {
+    width: 250px;
+  }
+  .phone-box.box-1.in-place,
+  .phone-box.box-2.in-place,
+  .phone-box.box-3.in-place {
+    top: 110px;
+    left: 40px;
+  }
+
+  .phone-box {
+    width: 148px !important;
+    /* Para rotar 3d */
+    perspective: 2000px;
+  }
+
+  /* Cuando la animacion se activa */
+  .phone-box.box-1 {
+    left: -100px;
+    top: 60px;
+    
+  }
+  .phone-box.box-2 {
+    left: 20px;
+    top: 80px;
+    
+  }
+  .phone-box.box-3 {
+    top: 130px;
+    left: 58%;
+  }
+
+  /* --------------- Blur Cards ------------------ */
+    
+  .blur-card {
+    padding: 20px 25px;
+  }
+  .blur-card .title{
+    font-size:1.3rem;
+  }
+  .blur-card .subtitle {
+    font-size: 1.15rem;
+  }
+
+  /* --------------- Clientes ------------------ */
+  #clientes{
+    background-size:100%;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-attachment: fixed;
+  }
+  .container-clientes{
+    justify-content: space-around;
+  }
+
+  
+  /* --------------- Trabajos ------------------ */
+
+  .large-block{
+    height:280px;
+  }
+  .bigest-block{
+    height:530px;
+  }
+
+  /* --------------- Modales ------------------ */
+  
+  .modal{
+    --bs-modal-width: 90%;
+  }
+  .modal-body .container-title{
+    padding:10px 20px;
+  }
+  .modal .modal-body .modal-title{
+    font-size:1.7rem;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  /* ---------------- navbar ---------------- */
+  .navbar{
+    background-color: var(--blueDark-2);
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    padding:5px 0;
+  }
+  .navbar-nav{
+    gap:5px;
+    transition:all .4 ease-in-out;
+  }
+  .navbar-nav .nav-link{
+    color:var(--font);
+    font-size:1rem;
+    font-weight: normal;
+    padding:5px 10px;
+    text-align: center;
+    /* border-top:1px solid #ccc; */
+  }
+  .btn-nav{
+    background:inherit;
+  }
+  .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgb(209, 202, 202)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+  }
+  .navbar-toggler{
+    border:1px solid rgb(209, 202, 202);
+
+  }
+  /* ---------------- Inicio ---------------- */
+  #inicio{
+    background-position: left;
+    /* background-size: cover; */
+  }
+  .left-div{
+    width: 50%;
+    padding: 0;
+    padding-right: 20px;
+  }
+  .right-div{
+    width: 50%;
+  }
+  .presentacion h2 {
+    font-size: 3rem;
+    text-align: start;
+    letter-spacing: 0.2rem;
+    /* text-align: center; */
+  }
+  
+  /* .presentacion p {
+    font-size: 1rem;
+  }
+  .presentacion .presupuesto-text {
+    font-size: 1rem; 
+  }*/
+
+  /* ------------ Animacion del celular--------------- */
+  .container-img-inicio {
+    width: 220px;
+  }
+  .phone-box.box-1.in-place,
+  .phone-box.box-2.in-place,
+  .phone-box.box-3.in-place {
+    top: 90px;
+    left: 38px;
+  }
+
+  .phone-box {
+    width: 128px !important;
+    /* Para rotar 3d */
+    perspective: 2000px;
+  }
+
+  
+  /* Cuando la animacion se activa */
+  .phone-box.box-1 {
+    left: -80px;
+    top: 60px;
+  }
+  /* --------------- Blur Cards ------------------ */
+
+  #services-page{
+    padding:20px 0;
+  }
+    
+  .blur-card {
+    /* width: 100%; */
+    padding: 20px 15px;
+  }
+  
+  .b-card-body {
+    text-align: justify;
+    font-size: .9rem;
+  }
+  .b-card-img {
+    height: 200px;
+  }
+
+  /* --------------- Clientes ------------------ */
+  #clientes{
+    background-size:100%;
+    background-position: center;
+    background-attachment: fixed;
+  }
+  .container-clientes{
+    justify-content: start;
+    gap:20px;
+  }
+  .container-clientes .cliente-logo{
+    width: 150px;
+    height: 150px;
+  }
+  #clientes .subtitle{
+    font-size:1.1rem;
+  }
+
+  /* --------------- Especialidad ------------------ */
+  #especialidades{
+    background-position: center;
+  }
+  .box-tl{
+  width: 250px;
+    /* From https://css.glass */
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+  .box-tl .subtitle{
+    font-size:1.1rem;
+  }
+  .box-tl .box-tl-body{
+    font-weight: normal;
+    color:var(--blueDark-1);
+  }
+  .timeline-bar{
+    display: none;
+  }
+  .timeline-container .row{
+    gap:20px;
+  }
+  .row-desktop{
+    display: none;
+  }
+  .box-mobile{
+    display: block;
+  }
+
+  /* --------------- Trabajos ------------------ */
+
+  .large-block{
+    height:225px;
+    grid-column: 1 / 4;
+
+  }
+  .grid-proyectos {
+    grid-template-columns: 3fr 2fr;
+    /* gap: 15px; */
+  }
+
+  /* Bloques pequeños (alineados en fila bajo el grande) */
+  .small-block:nth-of-type(2) {
+    grid-column: 1 / 2;
+    grid-row: 2;
+    width: 100%; /* casi la mitad, con gap se completa */
+
+  }
+  .small-block{
+    height:200px;
+  }
+  .small-block:nth-of-type(3) {
+    grid-column: 1 / 2;
+    grid-row: 3;
+    width: 100%;
+    justify-self: start;
+    height:200px;
+  }
+  
+  .bigest-block{
+    height:415px;
+    grid-column: 2 / 4;
+    grid-row: 2 / span 3;
+  }
+  
+}
+
+/* Celulares (pantallas con un ancho máximo de 767px) */
+@media screen and (max-width: 767px) {
+  /* Estilos específicos para celulares */
+  .construction-page {
+    /* height:auto; */
+    min-height: 100vh;
+  }
+
+  .title-page {
+    font-size: 2rem;
+  }
+  /* section {
+    padding: 20px 0;
+  }
+  article{
+    padding: 20px 0;
+  } */
+  /* ============== Inicio ============== */
+  
+  #top-page, #services-page{
+    padding:20px 0;
+  }
+  #inicio{
+    padding-bottom:0;
+  }
+  .left-div,
+  .right-div {
+    width: 100%;
+  }
+
+  .right-div{
+    /* border:1px solid red; */
+    height:300px;
+  }
+
+  .presentacion h2 {
+    font-size: 2.5rem;
+    text-align: start;
+    letter-spacing: 0.3rem;
+    /* text-align: center; */
+  }
+
+  /* --------------- Blur Cards ------------------ */
+  .col-blurCards{
+    padding:10px 0;
+  }
+  .blur-card {
+    /* width: 100%; */
+    padding: 20px 30px;
+  }
+  .blur-card .title{
+    font-size:1.3rem;
+  }
+  .blur-card .subtitle {
+    letter-spacing: 0.1rem;
+    font-size: 1.15rem;
+  }
+  .b-card-body {
+    text-align: justify;
+    font-size: .9rem;
+  }
+  .b-card-img {
+    height: 240px;
+  }
+
+  /* --------------- Clientes ------------------ */
+  #clientes{
+    background-size:100%;
+    background-position: center;
+    background-repeat: repeat;
+    background-attachment: fixed;
+  }
+
+  /* --------------- Trabajos ------------------ */
+
+  .large-block{
+    height:190px;
+    grid-column: 1 / 4;
+
+  }
+
+  .small-block:nth-of-type(3) {
+    grid-column: 1 / 2;
+    grid-row: 3;
+    width: 100%;
+    justify-self: start;
+    height:150px;
+  }
+  
+  .small-block{
+    height:150px;
+  }
+  .bigest-block{
+    height:315px;
+    grid-column: 2 / 4;
+    grid-row: 2 / span 3;
+  }
+  .title-proy-bg .box-title{
+    font-size:1rem;
+  }
+
+  .contenedor-flechas .arrow-block-text{
+    font-size:.9rem;
+  }
+  /* --------------- Modales ------------------ */
+  .modal .modal-header{
+    padding:10px 30px;
+  }
+  .modal .text-content {
+    padding:15px 20px;
+  }
+  .modal .modal-body .right-side img{
+    width: 50%;
+  }
+  .modal .modal-body .right-side img.large-img{
+    width: 60%;
+
+  }
+  .btns-container-modal{
+    padding:15px 0;
+  }
+
+  .modal-header.identidad-header-modal{
+    padding:0;
+    height:240px;
+  }
+
+  .modal-body .left-side {
+    order: 2;
+  }
+
+  .modal-body .right-side {
+    order: 1;
+  }
+
+
+
+
+  /* --------------- Contacto ------------------ */
+  .form{
+    width: 80%;
+    padding:40px ;
+    
+  }
+  /* --------------- Footer ------------------ */
+
+  .footer-menu{
+    display: none;
+  }
+}
+
+/* Celulares (pantallas con un ancho máximo de 767px) */
+@media screen and (max-width: 520px) {
+  /* Estilos específicos para celulares */
+  .title-page {
+    font-size: 1.5rem;
+  }
+
+  .img-pet {
+    width: 200px;
+  }
+
+  .text-footer {
+    font-size: 1rem;
+  }
+  .title {
+    font-size:1.4rem;
+  }
+  .subtitle {
+    font-size:1.2rem;
+
+  }
+  /* --------------- Blur Cards ------------------ */
+  .blur-card {
+    width: 90%;
+    padding: 20px 30px;
+  }
+  .b-card-img {
+    height: 200px;
+  }
+
+  /* --------------- Clientes ------------------ */
+  
+  .container-clientes{
+    justify-content: space-around;
+    gap:10px;
+  }
+  .container-clientes .cliente-logo{
+    width: 140px;
+    height: 140px;
+  }
+  #clientes .subtitle{
+    font-size:1.1rem;
+  }
+  /* --------------- Trabajos ------------------ */
+    
+    .large-block { 
+      height:230px;
+      grid-area: 1 / 1 / 2 / 5; 
+    }
+    .small-block:nth-of-type(2) { 
+      height:230px;
+      grid-area: 2 / 1 / 3 / 5; 
+    }
+    .small-block:nth-of-type(3) { 
+      height:230px;
+      grid-area: 3 / 1 / 4 / 5; 
+    }
+    .bigest-block { 
+      grid-area: 4 / 1 / 5 / 5; 
+    }
+    .contenedor-flechas .arrow-block-text{
+      font-size:.9rem;
+    }
+
+  /* --------------- Modales ------------------ */
+  .modal-content {
+    background-position: center top;
+  }
+
+  /* --------------- Footer ------------------ */
+  footer ul li, footer p{
+    font-size:.9rem;
+  }
+
+  
+
+}
+
+
+/* Celulares estándar (hasta 430px) */
+@media screen and (max-width: 430px) {
+  /* ---------------- navbar ---------------- */
+  .navbar{
+    padding:5px 0;
+  }
+  .navbar-toggler{
+    padding:2px 5px;
+  }
+  .navbar-brand{
+    display: flex;
+    justify-content: center;
+  }
+  .navbar-brand img{
+    width:80%;
+  }
+  /* --------------- Blur Cards ------------------ */
+  .blur-card {
+    width: 90%;
+    padding: 20px;
+  }
+  .container-clientes .cliente-logo{
+   
+    padding:5px;
+  }
+
+  /* --------------- Proyectos ------------------ */
+  .grid-proyectos{
+    gap:10px;
+  }
+  .large-block { 
+    height:200px;
+  }
+  .small-block:nth-of-type(2) { 
+    height:200px;
+  }
+  .small-block:nth-of-type(3) { 
+    height:200px;
+  }
+  .bigest-block { 
+    grid-area: 4 / 1 / 5 / 5; 
+    height:200px;
+
+  }
+  /* --------------- Modales ------------------ */
+  .modal .modal-body{
+    padding-top:0;
+  }
+  .modal .modal-body .modal-title{
+    font-size: 1.3rem;
+    text-align: center;  
+  }
+  .modal .text-content{
+    padding: 10px 15px;
+  }
+  .btns-container-modal{
+    padding:10px 0;
+  }
+
+  .modal-header.identidad-header-modal{
+    padding:0;
+    height:240px;
+  }
+  .modal-header.identidad-header-modal img{
+    width:100%;
+  }
+
+  .modal .modal-body .right-side img.large-img{
+    width: 80%;
+  }
+
+  .modal-body .text-content{
+    padding:0;
+    font-size:.9rem;
+  }
+  .btns-container-modal .btn-main{
+    font-size:1rem;
+    padding:5px 10px;
+  }
+  .modal-mensaje{
+    padding:5px 15px;
+    font-size:1rem;
+  }
+  /* --------------- Contacto ------------------ */
+
+  .form{
+    width: 95%;
+    padding:15px ;
+    
+  }
+
+  /* --------------- Footer ------------------ */
+  
+  footer .footer-right p{
+    font-size:1.1rem;
+    margin-bottom:3px;
+    /* text-align: center; */
+  }
+  /* footer .footer-right ul li{
+    text-align: center;
+  } */
+  footer .container-subtitle {
+    padding-top:10px;
+  }
 }
