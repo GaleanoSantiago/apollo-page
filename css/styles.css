@@ -1020,7 +1020,42 @@ article{
   font-size:1.1rem;
 }
 
+
+/* Tatiana Johnson Modal Customization */
+.modal-psicologa-body .container-title {
+  padding: 10px 30px;
+}
+
+.modal-psicologa-body .text-content {
+  padding: 15px 30px;
+}
+
+.modal-psicologa-body .right-side {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-psicologa-body .right-side img.large-img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  border-radius: 10px;
+}
+
+/* Restore for mobile if it looks weird */
+@media (max-width: 768px) {
+  .modal-psicologa-body .right-side img.large-img {
+    width: 60%;
+    margin: 0 auto;
+    object-fit: contain;
+  }
+}
+
 /* Modal de software */
+
 
 .modal-software .laptop-img img{
   width: 70%;

@@ -1,0 +1,205 @@
+/* CalSans Regular */
+@font-face {
+    font-family: "CalSans";
+    src: url("../../fonts/calsans/CalSans-Regular.ttf") format("truetype");
+}
+
+/* Figtree Regular */
+@font-face {
+    font-family: "Figtree";
+    src: url("../../fonts/figtree/static/Figtree-Regular.ttf") format("truetype");
+}
+
+:root {
+    --blueDark-1: #17385d;
+    --blueDark-2: #071328;
+    --blueLight: #d0e3ea;
+    --accent-color: #3498db; /* Replaced orange */
+    --font: #fafafa;
+    --card-bg: rgba(23, 56, 93, 0.8);
+}
+
+body {
+    background-image:  url("../../img/background/Seccion_1.webp");
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    color: var(--font);
+    font-family: 'Figtree', sans-serif;
+    min-height: 100vh;
+}
+
+/* Layout specfic for Viewer to take full height */
+body.viewer-body {
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.viewer-content {
+    flex: 1;
+    overflow: hidden; /* Prevent body scroll, handle inside if needed */
+    height: 100%;
+}
+
+h1, h2, h3, h4, h5, .navbar-brand {
+    font-family: 'CalSans', sans-serif;
+}
+
+/* Document Cards (Dashboard) */
+.doc-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 20px;
+    position: relative;
+    transition: transform 0.2s;
+}
+
+.doc-card:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.status-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.status-pending {
+    background-color: #ffc107;
+    color: #000;
+}
+
+.status-signed {
+    background-color: #28a745;
+    color: #fff;
+}
+
+/* Auth Cards (Login) - Replicating .blur-card from styles.css */
+.card-auth {
+    /* From https://css.glass */
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    
+    color: var(--font);
+    padding: 30px 40px; /* Adjusted padding */
+}
+
+.form-control {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: none;
+    border-bottom: 1px solid #ccc; /* Matching main form style */
+    border-radius: 0;
+    color: white;
+}
+
+/* Navigation Styles from Main Site */
+.navbar-nav {
+  gap: 30px;
+}
+.nav-link {
+  color: #fff !important; /* Force white for visibility on dark background */
+  font-size: 1.1rem;
+  font-weight: bold;
+  letter-spacing: 0.05rem;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+.nav-link:hover {
+    color: var(--accent-color) !important;
+}
+
+/* Button Main Style */
+.btn-main {
+  background: #faf2ce; /* var(--whiteDegrade) from styles.css */
+  color: #17385d;     /* var(--blueDark-1) */
+  font-size: 1.1rem;
+  padding: 8px 20px;
+  border: none;
+  font-weight: bold;
+  border-radius: 5px; /* Default bootstrap radius or similar */
+  transition: all 0.3sease;
+}
+.btn-main:hover {
+  background-color: #f0e6b5;
+  color: #071328;
+}
+
+/* Replaces .btn-primary usage */
+.btn-primary {
+    background-color: var(--accent-color);
+    border: none;
+}
+
+/* Document Cards (Dashboard) - White Theme requested */
+.doc-card {
+    background: rgba(255, 255, 255, 0.95); /* Nearly solid white */
+    border: none;
+    border-radius: 12px;
+    padding: 20px;
+    position: relative;
+    transition: transform 0.2s;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    color: #333; /* Dark text for white card */
+}
+
+.doc-card h5 {
+    color: #17385d; /* BlueDark-1 for titles */
+}
+.doc-card p {
+    color: #666 !important;
+}
+
+.doc-card:hover {
+    transform: translateY(-5px);
+    background: #fff;
+}
+
+/* Status Badges */
+.status-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.status-pending { background-color: #ffc107; color: #000; }
+.status-signed { background-color: #28a745; color: #fff; }
+
+/* Viewer Styling */
+.signature-pad {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    border: 1px solid #eee;
+}
+
+/* Navbar overrides */
+.navbar-dark .navbar-brand {
+    color: var(--font);
+    font-size: 1.5rem;
+}
+
+.badge-success {
+    background-color: #28a745;
+    color: white;
+}
+.badge-warning {
+    background-color: #ffc107;
+    color: black;
+}
