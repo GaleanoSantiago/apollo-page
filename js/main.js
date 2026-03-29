@@ -291,3 +291,40 @@ document.querySelectorAll('[data-modal-content-id]').forEach(button => {
     }
   });
 });
+
+
+// ============== Para enviar el formulario asincrono =============
+
+document.getElementById('contactForm').addEventListener('submit', async function(e) {
+  e.preventDefault();
+
+  const form = e.target;
+  const data = new FormData(form);
+
+  try {
+      const res = await fetch('enviar.php', {
+          method: 'POST',
+          body: data
+      });
+
+      const text = await res.text();
+
+      if (text.trim() === 'OK') {
+          form.reset();
+          showModal();
+      } else {
+          console.log('Error: ' + text);
+      }
+
+  } catch (error) {
+      console.log('Error de conexión');
+  }
+});
+
+function showModal() {
+    document.getElementById('successModal').classList.add('active');
+}
+
+function closeModal() {
+    document.getElementById('successModal').classList.remove('active');
+}

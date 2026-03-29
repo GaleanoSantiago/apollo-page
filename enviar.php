@@ -10,31 +10,51 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $mail = new PHPMailer(true);
 
     try {
+        // DEBUG (activar solo si falla)
+        // $mail->SMTPDebug = 2;
+
         $mail->isSMTP();
         $mail->Host = 'smtp.hostinger.com';
         $mail->SMTPAuth = true;
         $mail->Username = 'negocios@apollo.com.ar';
-        $mail->Password = 'TU_PASSWORD_REAL';
-        $mail->SMTPSecure = 'tls';
+        $mail->Password = '8tQJL$E0t'; //Password real
+        $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
         $mail->Port = 587;
 
         $mail->setFrom('negocios@apollo.com.ar', 'Web Apollo');
-        $mail->addAddress('negocios@apollo.com.ar');
+        $mail->addAddress('agenciaapollo.arg@gmail.com');
 
         $mail->isHTML(false);
 
-        $mail->Subject = $_POST['asunto'];
+        // Sanitizar básico
+        $nombre = trim($_POST['nombre'] ?? '');
+        $email = trim($_POST['email'] ?? '');
+        $asunto = trim($_POST['asunto'] ?? '');
+        $mensaje = trim($_POST['mensaje'] ?? '');
+
+        if (!$nombre || !$email || !$asunto || !$mensaje) {
+            echo "ERROR: Datos incompletos";
+            exit;
+        }
+
+        $mail->Subject = $asunto;
 
         $mail->Body =
-            "Nombre: " . $_POST['nombre'] . "\n" .
-            "Email: " . $_POST['email'] . "\n\n" .
-            "Mensaje:\n" . $_POST['mensaje'];
+            "Nombre: $nombre\n" .
+            "Email: $email\n\n" .
+            "Mensaje:\n$mensaje";
 
         $mail->send();
 
         echo "OK";
+        exit;
 
     } catch (Exception $e) {
         echo "ERROR: " . $mail->ErrorInfo;
+        exit;
     }
 }
+
+// Si no es POST
+echo "ERROR: Metodo no permitido";
+exit;

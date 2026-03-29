@@ -563,15 +563,15 @@
                         <h3 class="subtitle"  data-aos="fade-right"  data-aos-delay="150" data-aos-once="true">¡HABLEMOS!</h3>
                         <h2 class="title" data-aos="fade-right"  data-aos-delay="250" data-aos-once="true">TU EMPRESA MERECE CRECER</h2>
                     </div>
-                    <form action="enviar.php" class="form" data-aos="fade-up"  data-aos-delay="350" data-aos-once="true">
+                    <form id="contactForm" class="form" data-aos="fade-up"  data-aos-delay="350" data-aos-once="true">
                         <div class="mb-3">
-                            <input type="text" class="form-control" placeholder="Nombre">
+                            <input type="text" name="nombre" class="form-control" placeholder="Nombre">
                         </div>
                         <div class="mb-3">
-                            <input type="gmail" class="form-control" placeholder="Correo Electrónico">
+                            <input type="gmail" name="email" class="form-control" placeholder="Correo Electrónico">
                         </div>
                         <div class="mb-3">
-                            <input type="text" class="form-control" placeholder="Asunto">
+                            <input type="text" name="asunto" class="form-control" placeholder="Asunto">
                         </div>
                         <div class="mb-3">
                             <textarea name="mensaje" id="" class="form-control" placeholder="Mensaje" rows="6"></textarea>
@@ -583,6 +583,13 @@
                 </div>
             </article>
         </section>
+        <div id="successModal" class="modal-success">
+            <div class="modal-box">
+                <h3>Mensaje enviado</h3>
+                <p>Se envió el correo a Apollo Software</p>
+                <button class="btn btn-primary" onclick="closeModal()">Cerrar</button>
+            </div>
+        </div>
         <!-- Modales -->
         <!--
             Instrucciones para agregar un nuevo proyecto con modal dinámico:

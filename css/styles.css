@@ -1178,6 +1178,31 @@ footer .ul-nav{
 /* footer .container-subtitle{
   padding:15px 0;
 } */
+
+/* modal de envio de formulario */
+
+.modal-success {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.modal-success.active {
+  display: flex;
+}
+
+.modal-box {
+  background: white;
+  padding: 25px;
+  border-radius: 10px;
+  text-align: center;
+  max-width: 300px;
+}
+
 /* ----------------------------------------- Responsive ----------------------------------------- */
 
 /* Tablets grandes y laptops pequeños (hasta 1280px) */
