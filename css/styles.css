@@ -1138,6 +1138,7 @@ footer a{
   color:var(--font);
   font-weight: bold;
 }
+
 footer ul{
   padding: 0;
 }
@@ -1156,6 +1157,14 @@ footer .icons-container{
   height:40px;
   background-color: var(--whiteDegrade);
   border-radius:5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+footer .icon-red i{
+  color:var(--blueDegrade);
+  font-size: 1.6rem;
+  font-weight: bold;
 }
 footer .ul-nav{
   text-align: end;
