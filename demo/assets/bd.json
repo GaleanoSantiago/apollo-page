@@ -1,0 +1,111 @@
+{
+    "oso_peluche": {
+      "orejas": [
+        {
+          "nombre": "Orejas Redondas",
+          "icono": "oso_ears_round.webp",
+          "precio": 500,
+          "elemento": "oso_ears_round.webp"
+        },
+        {
+          "nombre": "Orejas Puntiagudas",
+          "icono": "oso_ears_pointy.webp",
+          "precio": 650,
+          "elemento": "oso_ears_pointy.webp"
+        }
+      ],
+      "rostro": [
+        {
+          "nombre": "Rostro Cthulu",
+          "icono": "oso_plastic_face.webp",
+          "precio": 800,
+          "elemento": "oso_plastic_face.webp"
+        },
+        {
+          "nombre": "Rostro Diablo",
+          "icono": "oso_devil_mask.webp",
+          "precio": 500,
+          "elemento": "oso_devil_mask.webp"
+        },
+        {
+          "nombre": "Rostro Monstruo",
+          "icono": "oso_mask_monster.webp",
+          "precio": 800,
+          "elemento": "oso_mask_monster.webp"
+        },
+        {
+          "nombre": "Rostro Demon",
+          "icono": "oso_mask_devilcute.webp",
+          "precio": 800,
+          "elemento": "oso_mask_devilcute.webp"
+        }        
+      ],
+      "brazos": [
+        {
+          "nombre": "Brazos Suaves",
+          "icono": "oso_blank_arms.webp",
+          "precio": 700,
+          "elemento": "oso_blank_arms.webp"
+        },
+        {
+          "nombre": "Brazos con Garras",
+          "icono": "oso_claws.webp",
+          "precio": 850,
+          "elemento": "oso_claws.webp"
+        },
+        {
+          "nombre": "Brazos Tentáculos",
+          "icono": "oso_tentacles_arms.webp",
+          "precio": 950,
+          "elemento": "oso_tentacles_arms.webp"
+        },
+        {
+          "nombre": "Brazos con Ojos",
+          "icono": "oso_eyes_arms.webp",
+          "precio": 650,
+          "elemento": "oso_eyes_arms.webp"
+        }
+      ],
+      "torso": [
+        {
+          "nombre": "Corazón",
+          "icono": "oso_plastic_heart.webp",
+          "precio": 1200,
+          "elemento": "oso_plastic_heart.webp"
+        },
+        {
+          "nombre": "Corbatín",
+          "icono": "oso_corbatin.webp",
+          "precio": 1000,
+          "elemento": "oso_corbatin.webp"
+        },
+        {
+          "nombre": "Ojo",
+          "icono": "oso_eye_torso.webp",
+          "precio": 1100,
+          "elemento": "oso_eye_torso.webp"
+        }
+      ],
+      "piernas": [
+        {
+          "nombre": "Piernas Suaves",
+          "icono": "oso_blank_legs.webp",
+          "precio": 750,
+          "elemento": "oso_blank_legs.webp"
+        },
+        {
+          "nombre": "Piernas con Garras",
+          "icono": "oso_legs_claws.webp",
+          "precio": 900,
+          "elemento": "oso_legs_claws.webp"
+        },
+        {
+          "nombre": "Tentáculos",
+          "icono": "oso_pulpo_legs.webp",
+          "precio": 900,
+          "elemento": "oso_pulpo_legs.webp"
+        }
+      ]
+    }
+  }
+  

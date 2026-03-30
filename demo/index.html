@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custo Demo</title>
+    <link rel="icon" href="./../img/ApolloLogo-03.webp">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" 
+    rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="./assets/css/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+
+</head>
+<body>
+    <main>
+        <section>
+            <div class="container ">
+                <div class="row">
+                    <div class="col-12 text-center header-creepy">
+                        <h1 class="main-title">
+                            Módulo de Customización de 
+                            <span class="accent">Peluches Incomoditos</span>
+                        </h1>
+                        <p class="main-description">
+                            Esta es una demo interactiva de un sistema de personalización.
+                            Combina piezas, prueba colores y genera tu diseño final listo para descargar y compartir.
+                        </p>
+                    </div>
+                    <div class="col-md-5 col-lg-5 ">
+                        
+                          
+                        <div class="custo-options">
+                            <h3 class="custo-title">Colores</h3>
+
+                            <div class="color-picker custo-row" >
+                                <div class="color-item color-reset"   title="Verde" data-filter="reset"></div>
+                                <div class="color-item color-blue"    title="Azul"      data-filter="blue"></div>
+                                <div class="color-item color-yellow"  title="Amarillo" data-filter="yellow"></div>
+                                <div class="color-item color-violet"  title="Violeta"  data-filter="violet"></div>
+                                <div class="color-item color-red"     title="Rojo"     data-filter="red"></div>
+                            </div>
+                            <!-- <div class="custo-row">
+                                <h3 class="custo-title">Orejas</h3>
+                                <div class="custo-galery">
+
+                                    <div class="custo-item">x</div>
+                                    <div class="custo-item">x</div>
+                                    <div class="custo-item">x</div>
+                                </div>
+                            </div>
+                            <div class="custo-row">
+                                <h3 class="custo-title">Rostro</h3>
+                                <div class="custo-galery">
+
+                                    <div class="custo-item">x</div>
+                                    <div class="custo-item">x</div>
+                                    <div class="custo-item">x</div>
+                                </div>
+                            </div>
+                            <div class="custo-row">
+                                <h3 class="custo-title">Brazos</h3>
+                                <div class="custo-galery">
+
+                                    <div class="custo-item">x</div>
+                                    <div class="custo-item">x</div>
+                                    <div class="custo-item">x</div>
+                                </div>
+                            </div>
+                            <div class="custo-row">
+                                <h3 class="custo-title">Torso</h3>
+                                <div class="custo-galery">
+
+                                    <div class="custo-item">x</div>
+                                    <div class="custo-item">x</div>
+                                    <div class="custo-item">x</div>
+                                </div>
+                            </div>
+                            <div class="custo-row">
+                                <h3 class="custo-title">Piernas</h3>
+                                <div class="custo-galery">
+
+                                    <div class="custo-item">x</div>
+                                    <div class="custo-item">x</div>
+                                    <div class="custo-item">x</div>
+                                </div>
+                            </div> -->
+                        </div>
+                    </div>
+                    <div class="col-md-7 col-lg-7  right-side">
+                        
+                        <div class="div-cont-lienzo">
+                            
+                              
+                            
+                            <div class="lienzo">
+                                <img class="body_base" src="./assets/img/oso_cthulhu/oso_blank_full.webp" alt="">
+                                <!-- <img class="ears" src="./assets/img/oso_cthulhu/oso_ears_pointy.webp" alt="">
+                                <img class="face" src="./assets/img/oso_cthulhu/oso_blank_arms.webp" alt="">
+                                <img class="arms" src="./assets/img/oso_cthulhu/oso_blank_legs.webp" alt="">
+                                <img class="torso" src="./assets/img/oso_cthulhu/oso_plastic_face.webp" alt="">
+                                <img class="legs" src="./assets/img/oso_cthulhu/oso_plastic_heart.webp" alt=""> -->
+                            </div>
+                        </div>
+                        <div class="container-btn-finalizar btn-overflow">
+                            <!-- Button trigger modal -->
+                            <button type="button" class="btn btn-finalizar " data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                Finalizar Peluche
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Modal Finalización -->
+    <div class="modal fade modal-creepy" id="exampleModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+    
+            <div class="modal-header border-0">
+            <h5 class="modal-title">
+                🎀 Diseño Finalizado
+            </h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+            </div>
+    
+            <div class="modal-body text-center">
+    
+            <div class="creepy-icon mb-3">
+                🧸
+            </div>
+    
+            <p class="modal-message">
+                Si te sientes satisfecho con tu creación,
+                descarga la imagen de tu osito y envíala a nuestro Instagram
+                <a href="https://instagram.com/calavera_tornasol" target="_blank" class="instagram-tag">@calavera_tornasol</a>
+                para completar tu pedido.
+            </p>
+    
+            <button id="download-lienzo" class="btn btn-creepy mt-3">
+                Descargar Diseño
+            </button>
+    
+            </div>
+    
+        </div>
+        </div>
+    </div>
+  
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" 
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+
+    <script src="./assets/js/main.js"></script>
+</body>
+</html>
